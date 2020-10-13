@@ -1,5 +1,13 @@
 # commonplatform
 
+
+## 所用技术
++ VueCLi 4.3.1
++ axios 0.20.0
++ vue-cookies 1.7.4
++ element-ui 2.13.2
++ less 3.0.4
+
 ## Project setup
 ```
 npm install

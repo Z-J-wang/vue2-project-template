@@ -16,9 +16,6 @@ export default {
   name: 'Home',
   components: {
     HelloWorld
-  },
-  created () {
-    console.log(this.$HttpApi)
   }
 }
 </script>
