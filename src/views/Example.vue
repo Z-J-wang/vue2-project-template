@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <example-introduction/>
-  </div>
+    <div>
+        <example-introduction />
+    </div>
 </template>
 
 <script>
@@ -9,12 +9,12 @@
 import ExampleIntroduction from '@c/example/ExampleIntroduction.vue'
 
 export default {
-  name: 'Home',
-  components: {
-    ExampleIntroduction
-  },
-  created () {
-    console.log(this.$HttpApi)
-  }
+    name: 'Home',
+    components: {
+        ExampleIntroduction
+    },
+    created () {
+        console.log(this.$HttpApi)
+    }
 }
 </script>

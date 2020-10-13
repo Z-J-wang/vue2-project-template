@@ -51,10 +51,12 @@ COMMONPLATFORM
 │?? │?? └── js
 │?? ├── axios                               http request 相关文件
 │?? │?? ├── config                          axios 配置
-│?? │?? ├── module                          http request 模块分离（用于预防网站 http request API 过多导致单个文件过于冗长，难以查找）
+│?? │?? ├── modules                          http request 模块分离（用于预防网站 http request API 过多导致单个文件过于冗长，难以查找）
 │?? │?? └── HttpApi.js                      http request 对外接口（用于整合全部 http request API，统一暴露出去）
 │?? ├── components                          Vue 功能组件（功能组件与页面对应，增加一个页面就应该在components 添加一个对应的文件夹，文件夹里面存放该页面的功能组件）
 │?? ├── router                              vue-router
+│?? │?? ├── modules                         vue-router 模块分离
+│?? │?? └── index.js
 │?? ├── store                               vuex
 │?? ├── util                                工具类 API
 │?? ├── views                               网站页面
