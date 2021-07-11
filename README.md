@@ -1,5 +1,5 @@
-# backstage-management-system
-> 本项目基于Vue、VueCLI4.0及Element-ui 搭建的后台管理系统
+# vue-cli-template
+> vue-cli-template 模板项目架构
 
 
 ## Project setup
