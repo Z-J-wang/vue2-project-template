@@ -32,7 +32,7 @@ export default {
   name: '404',
   data() {
     return {
-      url: require('../assets/404.png')
+      url: require('../assets/img/404.png')
     };
   },
 

@@ -56,25 +56,30 @@ COMMONPLATFORM
 │?? │?? └── js
 │?? ├── axios                               http request 相关文件
 │?? │?? ├── config                          axios 配置
-│?? │?? ├── modules                          http request 模块分离（用于预防网站 http request API 过多导致单个文件过于冗长，难以查找）
-│?? │?? └── HttpApi.js                      http request 对外接口（用于整合全部 http request API，统一暴露出去）
-│?? ├── components                          Vue 功能组件（功能组件与页面对应，增加一个页面就应该在components 添加一个对应的文件夹，文件夹里面存放该页面的功能组件）
+│?? │?? └── index.js                      	http request 对外接口（用于整合全部 http request API，统一暴露出去）
+│?? ├── components                          Vue 功能组件（功能组件与views中的页面对应，增加一个页面就应该在components 添加一个对应的文件夹，文件夹里面存放该页面的功能组件）
+│?? ├── extends                             借助 vue extends 创建的全局组件集合（vue extends 常用于创建指令型功能组件）
+│?? │?? ├── modules													vue extends 创建的子组件存放点
+│?? │?? └── index.js 												extends 对外暴露的接口
+|?? ├── global-components										全局注册组件，所有的全局注册组件都在这里配置（注意区分全局注册组件和全局通用组件）
+│?? │?? ├── modules													全局注册组件存放点
+│?? │?? └── index.js 												全局注册组件的配置文件
+│?? ├── modules                             业务模块集合（根据业务模块来进行代码上的模块划分，每个模块“低耦合，高凝聚”。模块内部的目录结构和vue-cli相似，同样包含 assets、axios、components、routes、views）
+│?? │?? ├── module-name						           模块字(一个文件夹对应一个模块)
+│?? │?? │?? └── assets
+│?? │?? │?? └── axios
+│?? │?? │?? └── components
+│?? │?? │?? └── routes
+│?? │?? │?? └── views
 │?? ├── router                              vue-router
-│?? │?? ├── modules                         vue-router 模块分离
 │?? │?? └── index.js
 │?? ├── store                               vuex
+│?? │?? ├── modules													vuex 子模块
+│?? │?? └── index.js 												vuex 对外暴露的接口
 │?? ├── util                                工具类 API
+│?? │?? ├── modules													util 子模块
+│?? │?? └── index.js 												util 对外暴露的接口
 │?? ├── views                               网站页面
-│?? ├── modules                             各个模块
-│?? │?? ├── filename						            文件夹名(单独一个模块)
-│?? │?? │?? └── router
-│?? │?? │?? │?? └── front.js                前台所有路由
-│?? │?? │?? │?? └── back.js                 后台管理所有路由（用来自动生成侧边栏菜单）
-│?? │?? │?? │?? └── user.js                 个人中心所有路由（用来自动生成侧边栏菜单）
-│?? │?? │?? │?? └── service-provider-management.js 服务商管理所有路由（用来自动生成侧边栏菜单）
-│?? │?? │?? └── axios
-│?? │?? │?? └── views
-│?? │?? │?? └── components
 │?? ├── App.vue
 │?? └── main.js
 ├── .browserslistrc                         浏览器兼容配置
@@ -83,6 +88,7 @@ COMMONPLATFORM
 ├── .env.production                         生产环境变量配置
 ├── .eslintrc.js                            eslint 配置
 ├── .gitignore                              git 忽略文件
+├── .prettierrc                             Prettier - Code formatter 配置文件
 ├── babel.config.js                         babel 配置
 ├── CHANGELOG.md                            项目 change log
 ├── package-lock.json
