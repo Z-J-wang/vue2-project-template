@@ -11,14 +11,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  created() {
-    this.$HttpApi.getUserinfo();
-  }
-};
-</script>
-
 <style lang="less">
 @app-footer-height: 60px;
 @app-main-height: calc(~'100vh - @{app-footer-height}');

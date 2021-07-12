@@ -1,25 +1,26 @@
 import axios from 'axios';
-import Cookie from '../util/cookie';
+import Cookie from '../util/modules/cookie';
 import { Message } from 'element-ui';
-
-const cookie = new Cookie();
-const token = cookie.getToken();
 
 class AxiosConfig {
   constructor() {
     this._instance = axios.create({
       baseURL: process.env.VUE_APP_SERVER_URL,
-      // timeout: 1000,
-      headers: { Authorization: `${token}` },
-      // headers: { 'Authorization': `Bearer ${token}` }
-      withCredentials: true
+      withCredentials: true, // http request 携带cookie
+      timeOut: 5000 // 指定请求超时的毫秒数，超过 `timeout` 的时间，请求将被中断
     });
 
     // 添加请求拦截器
     this._instance.interceptors.request.use(
       function(config) {
-        // this.$message("sasda")
         // 在发送请求之前做些什么
+        const cookie = new Cookie();
+        const token = cookie.getToken();
+        if (token) {
+          // 当 token 存在时， http请求自动携带 token
+          config.headers.authorization = `Bearer ${token}`;
+        }
+
         return config;
       },
       function(error) {

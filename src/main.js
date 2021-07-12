@@ -2,21 +2,27 @@ import Vue from 'vue';
 import App from './App.vue';
 import router from './router';
 import store from './store';
+
+/* 全局引入 element-ui start */
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+/* 全局引入 element-ui end */
 
-import util from '@/util/index';
-import Cookies from './util/cookie';
-import Axios from './axios/index.js';
-import initExtendsFN from '@/extends/index';
-
-import '@a/css/common.less';
+/* 全局引入 vue-highlightjs start */
 import VueHighlightJS from 'vue-highlightjs';
 import 'highlight.js/styles/atom-one-light.css';
+/* 全局引入 vue-highlightjs end */
+
+/* 自定义全局插件引入 start */
+import '@a/css/common.less';
+import util from '@/util/index';
+import Axios from './axios/index.js';
+import initExtendsFN from '@/extends/index';
 import globalDirectives from '@/global-components/index';
+/* 自定义全局插件引入 end */
 
 Vue.config.productionTip = false;
-Vue.prototype.$Cookie = new Cookies();
+Vue.prototype.$Cookie = new util.cookie();
 Vue.prototype.$HttpApi = new Axios();
 Vue.prototype.$Util = util;
 
