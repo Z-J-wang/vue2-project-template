@@ -3,7 +3,7 @@ import VueRouter from 'vue-router';
 import { automatedImportOfRoutes } from '@/util/modules/automoted-import-modules';
 
 // 自动加载 modules 的路由文件
-const modulesRoutes = automatedImportOfRoutes(require.context('@/modules/', true, /\/routes\/index.js/));
+const modulesRoutes = automatedImportOfRoutes(require.context('@/business-modules/', true, /\/routes\/index.js/));
 
 Vue.use(VueRouter);
 

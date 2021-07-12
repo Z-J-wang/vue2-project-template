@@ -98,13 +98,12 @@ COMMONPLATFORM
 
 ```
 
+### 为什么要根据业务模块划分代码模块
 
+根据业务模块来划分代码模块
 
 ## axios 使用说明
 
 + `withCredentials: true`:默认携带cookie
 + `timeOut: 5000` 请求超时5秒
 + 所有请求header 中默认添加 `authorization`，向后端传递 token
-+ 所有请求的url自动添加前缀`/api`。可通过添加`config.noApi = true`取消该功能。eg: `this.axios.get('/docs/mallCodeList.json', { noApi: true });`
-+ 通过设置`config.notFilter`,可以让api直接抛出`ret = 0`的请求成功的数据
-+ 默认对所有的后端主动发送的请求错误信息做alert错误信息显示。可以通过设置`config.autoMsg`关闭

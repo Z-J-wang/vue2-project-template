@@ -1,6 +1,11 @@
 <template>
   <transition name="extends">
-    <div v-show="visible" id="messageBox" class="messageBox" @click="cloceModal">
+    <div
+      v-show="visible"
+      id="messageBox"
+      class="messageBox"
+      @click="cloceModal"
+    >
       <div class="contain">
         <header>
           <i class="close el-icon-close" v-if="showClose" @click="close"></i>
@@ -40,8 +45,12 @@
           </div>
         </main>
         <footer>
-          <el-button v-if="showCancelButton === true" @click="close">{{cancelButtonText}}</el-button>
-          <el-button type="primary" @click="confirm">{{confirmButtonText}}</el-button>
+          <el-button v-if="showCancelButton === true" @click="close">{{
+            cancelButtonText
+          }}</el-button>
+          <el-button type="primary" @click="confirm">{{
+            confirmButtonText
+          }}</el-button>
         </footer>
       </div>
     </div>
