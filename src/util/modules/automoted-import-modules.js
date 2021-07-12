@@ -11,6 +11,7 @@ function automatedImportForArray(context) {
     return value.default || value;
   });
 }
+
 /**
  * 自动化批量导入模块，将导入的模块存贮到一个对象中导出
  * @param {Function} context require.context()返回的结果；

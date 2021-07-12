@@ -64,7 +64,7 @@ COMMONPLATFORM
 |?? ├── global-components										全局注册组件，所有的全局注册组件都在这里配置（注意区分全局注册组件和全局通用组件）
 │?? │?? ├── modules													全局注册组件存放点
 │?? │?? └── index.js 												全局注册组件的配置文件
-│?? ├── modules                             业务模块集合（根据业务模块来进行代码上的模块划分，每个模块“低耦合，高凝聚”。模块内部的目录结构和vue-cli相似，同样包含 assets、axios、components、routes、views）
+│?? ├── business-modules                    业务模块集合（根据业务模块来进行代码上的模块划分，每个模块“低耦合，高凝聚”。模块内部的目录结构和vue-cli相似，同样包含 assets、axios、components、routes、views）
 │?? │?? ├── module-name						           模块字(一个文件夹对应一个模块)
 │?? │?? │?? └── assets
 │?? │?? │?? └── axios
@@ -98,12 +98,29 @@ COMMONPLATFORM
 
 ```
 
-### 为什么要根据业务模块划分代码模块
+## 为什么要设立 business-modules 文件夹
 
-根据业务模块来划分代码模块
+business-modules 文件夹中存放的是根据业务模块划分的代码集合，将业务相关的代码都集合在一起便以代码管理和查找。例如，将用户相关的代码集合到 `business-modules/user` 目录下，那以后查找用户相关的代码，就可以快速定位。此外，经过这样的划分后，各个业务模块的代码实现了“高内聚，低耦合”。
 
-## axios 使用说明
+### 怎么实现 business-modules
 
-+ `withCredentials: true`:默认携带cookie
-+ `timeOut: 5000` 请求超时5秒
-+ 所有请求header 中默认添加 `authorization`，向后端传递 token
+仔细观察 vue 的各个页面的关联，可以发现：**vue 每个页面的的联系都是由`vue-router`在维系着的。无论页面代码放在项目中的哪里，只要路由配置正常，都可以正常访问**。
+
+基于这一点，就可以实现 business-modules 了。
+
+观察 business-modules 模块内部的目录结构可以发现，business-modules 模块内部结构与 vue-cli 目录结构极其相似。事实上，可以把 business-modules 模块看作一个子 vue-cli 项目。 business-modules 模块与主体的 vue-cli 的“链接”仅仅是通过 vue-router 连接。在 business-modules 模块开发过程中，只需关注当前的 business-modules 模块的开发，等开发完成后在主体的 `src/router/index.js` 路由文件中导入开发好的 business-modules 模块的路由配置文件即可。
+
+
+
+## 项目实现自动化import
+
+因为 business-modules 的实现，每新增一个 business-modules，都需要到`src/router/index.js` 手动导入 business-modules 的路由文件。这样就会造成大量的重复工作以及导致 `src/router/index.js` 的臃肿，甚至还可能因为人为的失误导致代码无法允许。对于这种简单的重复性工作，可以实现一个自动化工具来替代人工操作。
+
+实现自动化import的关键函数是 webpage 的 `require.context`。借助 `require.context`，webpage 在编译时可以自动查找匹配的文件，并 `import` 。
+
+本项目已经对 routes、axiso、util、extends、vuex 实现了自动化import。
+> 关键的代码请查看：`src/util/modules/automoted-import-modules.js`。
+>
+> 实现原理解析可查看：[require.context() ——实现 vue 模块的自动导入](https://blog.csdn.net/weixin_44869002/article/details/109702090)
+
+
