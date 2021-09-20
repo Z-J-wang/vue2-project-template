@@ -14,20 +14,20 @@ module.exports = {
 
   chainWebpack: (config) => {
     // 开启图片压缩
-    config.module
-      .rule('images')
-      .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
-      .use('url-loader')
-      .loader('url-loader')
-      .options({
-        limit: 10240 // 图片小于10k转为base64,默认4k
-      })
-      .end()
-      .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
-      .use('image-webpack-loader')
-      .loader('image-webpack-loader')
-      .options({ bypassOnDebug: true })
-      .end();
+    // config.module
+    //   .rule('images')
+    //   .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+    //   .use('url-loader')
+    //   .loader('url-loader')
+    //   .options({
+    //     limit: 10240 // 图片小于10k转为base64,默认4k
+    //   })
+    //   .end()
+    //   .test(/\.(png|jpe?g|gif|svg)(\?.*)?$/)
+    //   .use('image-webpack-loader')
+    //   .loader('image-webpack-loader')
+    //   .options({ bypassOnDebug: true })
+    //   .end();
 
     // 配置Jquery
     config.plugin('provide').use(webpack.ProvidePlugin, [
