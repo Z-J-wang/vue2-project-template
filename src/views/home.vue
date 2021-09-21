@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import '@/mock/index';
 import carousel from '@c/home/carousel.vue';
 import card from '@/components/home/card.vue';
 export default {
@@ -28,6 +29,9 @@ export default {
     this.getBolgsOfNewest();
   },
   methods: {
+
+    
+
     /**
      * 获取最新发布的文章
      */
@@ -39,10 +43,8 @@ export default {
         pageSize: 10,
         page: 1
       };
-      const { data: res } = await this.$HttpApi.getArticlesByPage(params);
-      if (res?.code === 1000) {
-        this.dataList = res?.data?.rows;
-      }
+      const data = await this.$HttpApi.getArticlesByPage(params);
+      console.log(data);
     }
   }
 };

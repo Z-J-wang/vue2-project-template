@@ -53,7 +53,7 @@ function automatedImportOfRoutes(context) {
        * automatedImportForArray 方法不仅可以自动导入 modules 一级子模块的路由文件，
        * 还可以导入二级甚至三级都路由文件（即，子模块里的子模块的路由）。这样就破坏路由
        * 文件的层级，所以这里做了限制——只导入相对于子模块的路由文件。子模块的路由文件整
-       * 合有子模块自己维护
+       * 合由子模块自己维护
        */
       let value = context(item);
       arr_context = [...arr_context, ...value.default];
