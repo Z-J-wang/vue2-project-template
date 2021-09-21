@@ -21,12 +21,4 @@ export default class httpApi extends util.classMixin(AxiosConfig, ...MoudulesApi
    * @returns
    */
   getArticlesByPage = params => this.axios.get('/api/article/getArticlesByPage', { params: params });
-
-  list = () =>
-    this.axios.post('/list').then(response => {
-      if (response.data) {
-        console.log(response.data);
-        alert(response.data.name + ',' + response.data.age);
-      }
-    });
 }

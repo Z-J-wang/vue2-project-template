@@ -25,8 +25,9 @@ export default {
       dataList: []
     };
   },
-  created() {
-    this.getBolgsOfNewest();
+  async created() {
+    const res = await this.$HttpApi.example();
+    console.log(res);
   },
   methods: {
 
