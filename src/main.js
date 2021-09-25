@@ -21,7 +21,6 @@ import initExtendsFN from '@/extends/index';
 import globalDirectives from '@/global-components/index';
 /* 自定义全局插件引入 end */
 
-
 Vue.config.productionTip = false;
 Vue.prototype.$Cookie = new util.cookie();
 Vue.prototype.$HttpApi = new Axios();

@@ -21,9 +21,9 @@ const messageBox = (message, title, config = {}) => {
         type: config?.type || 'success'
       }
     });
-    instance.vm = instance.$mount(); // 挂载但是并未插入dom，是一个完整的Vue实例
-    instance.dom = instance.vm.$el;
-    document.body.appendChild(instance.dom); // 将dom插入body
+
+    instance.$mount(); // 挂载但是并未插入dom，是一个完整的Vue实例
+    document.body.appendChild(instance.$el); // 将dom插入body
 
     instance.callback = ret => {
       if (ret === true) {
@@ -40,4 +40,3 @@ export default {
     Vue.prototype.$messageBox = messageBox; // 将组件暴露出去，并挂载在Vue的prototype上
   }
 };
-
