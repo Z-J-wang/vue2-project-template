@@ -111,6 +111,7 @@ module.exports = {
       plugins: [
         ...config.plugins,
         ...[
+          // css sprite 插件的配置
           new SpritesmithPlugin({
             src: {
               cwd: path.resolve(__dirname, 'src/assets/icon'), // 多个图片所在的目录
@@ -120,10 +121,41 @@ module.exports = {
               // 最终图片的生成路径
               image: path.resolve(__dirname, 'src/assets/css-sprite/sprite.png'),
               // css文件的生成路劲
-              css: path.resolve(__dirname, 'src/assets/css-sprite/sprite.css')
+              css: [
+                [
+                  path.resolve(__dirname, 'src/assets/css-sprite/sprite.css'),
+                  {
+                    format: 'function_based_template' // 引用自定义模板， 本 css 将根据模板生成
+                  }
+                ]
+              ]
             },
             apiOptions: {
-              cssImageRef: './sprite.png' // 生成的图片相对于生成的CSS文件的路径
+              cssImageRef: './sprite.png' // 生成的图片相对于生成的 CSS 文件的路径
+            },
+            // 自定义模板入口
+            customTemplates: {
+              function_based_template: data => {
+                // 公用 class，其中配置了基础的样式属性
+                const shared = '.icon { display: inline-block; background-image: url(I);background-size: Wpx Hpx;}'
+                  .replace('I', data.sprites[0].image)
+                  .replace('W', data.spritesheet.width)
+                  .replace('H', data.spritesheet.height);
+
+                // 每张图片的 CSS 样式
+                const perSprite = data.sprites
+                  .map(function(sprite) {
+                    return '.icon-N { width: Wpx; height: Hpx; background-position: Xpx Ypx; }'
+                      .replace('N', sprite.name)
+                      .replace('W', sprite.width)
+                      .replace('H', sprite.height)
+                      .replace('X', sprite.offset_x)
+                      .replace('Y', sprite.offset_y);
+                  })
+                  .join('\n');
+
+                return shared + '\n' + perSprite;
+              }
             },
             // 让合成的每个图片有一定的距离
             spritesmithOptions: {
