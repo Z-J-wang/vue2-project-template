@@ -30,9 +30,6 @@ export default {
     console.log(res);
   },
   methods: {
-
-    
-
     /**
      * 获取最新发布的文章
      */

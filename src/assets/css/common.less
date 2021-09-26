@@ -1,65 +1,71 @@
+@import url('~@/assets/css-sprite/sprite.css');
+
+.icon {
+  display: inline-block;
+}
+
 @default-fontSize: 16px;
 
 * {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 .p-l-60 {
-	padding-left: 60px;
+  padding-left: 60px;
 }
 
 .pointer {
-	cursor: pointer;
+  cursor: pointer;
 }
 
 .text-l {
-	text-align: left;
+  text-align: left;
 }
 
 .text-r {
-	text-align: right;
+  text-align: right;
 }
 
 .text-c {
-	text-align: center;
+  text-align: center;
 }
 
 .text-indent-cn {
-	text-indent: @default-fontSize * 2;
+  text-indent: @default-fontSize * 2;
 }
 
 .text-indent-en {
-	text-indent: @default-fontSize;
+  text-indent: @default-fontSize;
 }
 
 .nowrap div {
-	white-space: nowrap !important;
+  white-space: nowrap !important;
 }
 
 .float-l {
-	float: left !important;
+  float: left !important;
 }
 
 .float-r {
-	float: right !important;
+  float: right !important;
 }
 
 .clearfix {
-	*zoom: 1;
-	_height: 1px;
+  *zoom: 1;
+  _height: 1px;
 }
 
 .clearfix::after {
-	content: '';
-	display: block;
-	visibility: hidden;
-	height: 0;
-	font-size: 0;
-	clear: both;
+  content: '';
+  display: block;
+  visibility: hidden;
+  height: 0;
+  font-size: 0;
+  clear: both;
 }
 
 .line-break,
 .line-break div,
 .line-break p .line-break li {
-	white-space: normal;
-	word-break: break-all;
+  white-space: normal;
+  word-break: break-all;
 }

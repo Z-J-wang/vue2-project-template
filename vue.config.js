@@ -4,6 +4,7 @@ const path = require('path');
 // const UglifyPlugin = require('uglifyjs-webpack-plugin')
 // const CompressionPlugin = require("compression-webpack-plugin")
 const webpack = require('webpack');
+const SpritesmithPlugin = require('webpack-spritesmith'); // 主角，必须引入。要不然咋用
 
 module.exports = {
   publicPath: './', // 基本路径
@@ -12,7 +13,7 @@ module.exports = {
   lintOnSave: false, // eslint-loader 是否在保存的时候检查
   productionSourceMap: true, // 生产环境是否生成 sourceMap 文件
 
-  chainWebpack: (config) => {
+  chainWebpack: config => {
     // 开启图片压缩
     // config.module
     //   .rule('images')
@@ -51,7 +52,7 @@ module.exports = {
     // }
   },
 
-  configureWebpack: (config) => {
+  configureWebpack: config => {
     if (process.env.NODE_ENV === 'production') {
       // 为生产环境修改配置...
       config.mode = 'production';
@@ -69,9 +70,7 @@ module.exports = {
               name(module) {
                 // get the name. E.g. node_modules/packageName/not/this/part.js
                 // or node_modules/packageName
-                const packageName = module.context.match(
-                  /[\\/]node_modules[\\/](.*?)([\\/]|$)/
-                )[1];
+                const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
                 // npm package names are URL-safe, but some servers don't like @ symbols
                 return `npm.${packageName.replace('@', '')}`;
               }
@@ -108,7 +107,31 @@ module.exports = {
           '@p': path.resolve(__dirname, './src/pages'),
           '@v': path.resolve(__dirname, './src/views')
         } // 别名配置
-      }
+      },
+      plugins: [
+        ...config.plugins,
+        ...[
+          new SpritesmithPlugin({
+            src: {
+              cwd: path.resolve(__dirname, 'src/assets/icon'), // 多个图片所在的目录
+              glob: '*.png' // 匹配图片的路径
+            },
+            target: {
+              // 最终图片的生成路径
+              image: path.resolve(__dirname, 'src/assets/css-sprite/sprite.png'),
+              // css文件的生成路劲
+              css: path.resolve(__dirname, 'src/assets/css-sprite/sprite.css')
+            },
+            apiOptions: {
+              cssImageRef: './sprite.png' // 生成的图片相对于生成的CSS文件的路径
+            },
+            // 让合成的每个图片有一定的距离
+            spritesmithOptions: {
+              padding: 20
+            }
+          })
+        ]
+      ]
     });
   },
 
