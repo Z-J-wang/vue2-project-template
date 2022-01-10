@@ -1,31 +1,78 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import { automatedImportOfRoutes } from '@/util/modules/automoted-import-modules';
 
-import exampleRoutes from './modules/exampleRoutes'
+// 自动加载 modules 的路由文件
+const modulesRoutes = automatedImportOfRoutes(require.context('@/business-modules/', true, /\/routes\/index.js/));
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-// 为了防止相关过大导致 Routes 数组太长造成路由配置查阅编辑的不便，我们可以依照模块将 routes 进行拆分提取
+// 解决多次点击同一路由报错问题
+const originalPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err);
+};
+
 const routes = [
-    {
-        path: '/',
-        name: 'Home',
-        component: Home
+  {
+    path: '/',
+    name: 'home',
+    meta: {
+      scrollToTop: true
     },
-    {
-        path: '/about',
-        name: 'About',
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import(/* webpackChunkName: "home" */ '../views/home.vue')
+  },
+  {
+    path: '/about',
+    name: 'About',
+    meta: {
+      scrollToTop: true
     },
-    ...exampleRoutes
-]
+    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/404',
+    name: '404',
+    meta: {
+      scrollToTop: true
+    },
+    component: () => import(/* webpackChunkName: "404" */ '../views/404.vue')
+  },
+  {
+    path: '*',
+    redirect: {
+      name: '404'
+    }
+  },
+  ...modulesRoutes
+];
+
+/**
+ * 路由切换滚动条行为
+ * 具体查看：https://router.vuejs.org/zh/guide/advanced/scroll-behavior.html
+ * @param {*} to
+ * @param {*} from
+ * @param {*} savedPosition
+ * @returns { x: number, y: number }
+ */
+const scrollBehavior = function(to, from, savedPosition) {
+  if (savedPosition) {
+    // savedPosition 当且仅当 popstate 导航 (通过浏览器的 前进/后退 按钮触发) 时才可用。
+    return savedPosition;
+  } else {
+    return { x: 0, y: 0 };
+  }
+};
 
 const router = new VueRouter({
-    routes
-})
+  mode: 'history',
+  routes,
+  scrollBehavior
+});
 
-export default router
+router.beforeEach((to, from, next) => {
+  // 路由守卫
+  next();
+});
+
+export default router;

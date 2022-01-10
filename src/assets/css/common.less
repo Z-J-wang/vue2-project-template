@@ -1,31 +1,67 @@
-/* 通用样式 */
-body {
-	margin: 0;
-	padding: 0;
+@import url('~@/assets/css-sprite/sprite.css');
+
+@default-fontSize: 16px;
+
+* {
+  box-sizing: border-box;
+}
+.p-l-60 {
+  padding-left: 60px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.text-l {
+  text-align: left;
+}
+
+.text-r {
+  text-align: right;
+}
+
+.text-c {
+  text-align: center;
+}
+
+.text-indent-cn {
+  text-indent: @default-fontSize * 2;
+}
+
+.text-indent-en {
+  text-indent: @default-fontSize;
+}
+
+.nowrap div {
+  white-space: nowrap !important;
+}
+
+.float-l {
+  float: left !important;
+}
+
+.float-r {
+  float: right !important;
 }
 
 .clearfix {
-	zoom: 1;
-	&::after {
-		content: '';
-		display: block;
-		height: 0;
-		clear: both;
-	}
+  *zoom: 1;
+  _height: 1px;
 }
 
-.pull-left {
-	float: left;
+.clearfix::after {
+  content: '';
+  display: block;
+  visibility: hidden;
+  height: 0;
+  font-size: 0;
+  clear: both;
 }
 
-.pull-right {
-	float: right;
-}
-
-.padding-left-15 {
-	padding-left: 15px;
-}
-
-.padding-right-15 {
-	padding-right: 15px;
+.line-break,
+.line-break div,
+.line-break p .line-break li {
+  white-space: normal;
+  word-break: break-all;
 }
