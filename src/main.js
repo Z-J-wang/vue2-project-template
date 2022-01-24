@@ -17,7 +17,7 @@ import 'highlight.js/styles/atom-one-light.css';
 import '@a/css/common.less';
 import util from '@/util/index';
 import Axios from './axios/index.js';
-import initExtendsFN from '@/extends/index';
+import initPluginsFN from '@/plugins/index';
 import globalDirectives from '@/global-components/index';
 /* 自定义全局插件引入 end */
 
@@ -30,7 +30,7 @@ Vue.prototype.$Util = util;
 Vue.use(ElementUI);
 Vue.use(VueHighlightJS);
 Vue.use(globalDirectives);
-initExtendsFN();
+initPluginsFN();
 
 new Vue({
   router,

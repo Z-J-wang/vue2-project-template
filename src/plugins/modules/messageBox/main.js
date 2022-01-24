@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import messageBoxVue from '@/extends/modules/messageBox/components/messageBox.vue';
+import messageBoxVue from '@/plugins/modules/messageBox/components/messageBox.vue';
 
 /**
  * 举例：借助 Vue.extend 实现可指令调用的组件 messageBox

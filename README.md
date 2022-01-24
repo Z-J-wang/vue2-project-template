@@ -58,7 +58,7 @@ COMMONPLATFORM
 │?? │?? ├── config                          axios 配置
 │?? │?? └── index.js                      	http request 对外接口（用于整合全部 http request API，统一暴露出去）
 │?? ├── components                          Vue 功能组件（功能组件与views中的页面对应，增加一个页面就应该在components 添加一个对应的文件夹，文件夹里面存放该页面的功能组件）
-│?? ├── extends                             借助 vue extends 创建的全局组件集合（vue extends 常用于创建指令型功能组件）
+│?? ├── plugins                             借助 vue extends 创建的全局组件集合（vue extends 常用于创建指令型功能组件）
 │?? │?? ├── modules													vue extends 创建的子组件存放点
 │?? │?? └── index.js 												extends 对外暴露的接口
 |?? ├── global-components										全局注册组件，所有的全局注册组件都在这里配置（注意区分全局注册组件和全局通用组件）
