@@ -30,10 +30,10 @@ module.exports = {
       })
       .end()
       // 启用图片压缩功能
-      .use('image-webpack-loader')
-      .loader('image-webpack-loader')
-      .options({ bypassOnDebug: false })
-      .end();
+      // .use('image-webpack-loader')
+      // .loader('image-webpack-loader')
+      // .options({ bypassOnDebug: false })
+      // .end();
 
     /**
      * 将svg图片转为组件使用
