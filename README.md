@@ -17,6 +17,9 @@
 + mavon-editor ^2.9.1
 
 ## 项目运行前先下载插件：
+
+### npm
+
 ```
 npm install
 ```
@@ -25,18 +28,43 @@ npm install
 ```
 cnpm i image-webpack-loader --save-dev
 ```
-### 项目本地调试
+### yarn
+
+```shell
+yarn install
+```
+
+> 推荐使用 yarn
+>
+> 使用 yarn 前需要全局安装 yarn。如果未安装，可运行一下命令安装：
+>
+> ```shell
+> npm instaill -g yarn
+> ```
+
+
+
+## 项目运行与打包
+
+### 本地运行
 
 ```
 npm run serve
 ```
 
-### 项目打包
+### 打包
 ```
 npm run build
 ```
 
+### 打包并分析生成的文件
+
+```shell
+npm run build:analyze
+```
+
 ### Lints 检测
+
 ```
 npm run lint
 ```
@@ -84,6 +112,7 @@ COMMONPLATFORM
 │?? └── main.js
 ├── .browserslistrc                         浏览器兼容配置
 ├── .editorconfig                           代码格式化配置（注意：需要与 eslint 配置一致）
+├── .env                                    通用环境变量配置
 ├── .env.development                        开发环境变量配置
 ├── .env.production                         生产环境变量配置
 ├── .eslintrc.js                            eslint 配置
@@ -110,6 +139,19 @@ business-modules 文件夹中存放的是根据业务模块划分的代码集合
 
 观察 business-modules 模块内部的目录结构可以发现，business-modules 模块内部结构与 vue-cli 目录结构极其相似。事实上，可以把 business-modules 模块看作一个子 vue-cli 项目。 business-modules 模块与主体的 vue-cli 的“链接”仅仅是通过 vue-router 连接。在 business-modules 模块开发过程中，只需关注当前的 business-modules 模块的开发，等开发完成后在主体的 `src/router/index.js` 路由文件中导入开发好的 business-modules 模块的路由配置文件即可。
 
+### 业务模块的开启关闭
+
+默认开启全部业务模块。如果需要关闭指定业务模块，可配置 `.env`文件中的环境变量`VUE_APP_FILTERMODULES`。此外，还可以通过运行脚本文件`run.sh`进行交互式设置业务模块的的开启关闭。
+
+> + 使用`run.sh` 脚本文件前需要在文件中补充完全可以关闭的业务模块。`run.sh` 脚本文件比较适合运维人员的使用。
+>+ 如果您将本架构用于多人协助开发的项目中，且对环境变量的设置仅仅是为了本地调试，建议您添加本地的环境变量文件来覆盖`.env`文件
+
+
+
+> 注意：
+>
+> <font color="red">本架构仅仅是为业务模块开启关闭功能打下基础。如果在开发过程没有做好业务模块代码的划分，关闭某些业务模块时可能会产生意想不到的后果。</font>
+
 
 
 ## 项目实现自动化import
@@ -122,5 +164,8 @@ business-modules 文件夹中存放的是根据业务模块划分的代码集合
 > 关键的代码请查看：`src/util/modules/automoted-import-modules.js`。
 >
 > 实现原理解析可查看：[require.context() ——实现 vue 模块的自动导入](https://blog.csdn.net/weixin_44869002/article/details/109702090)
+
+
+
 
 
