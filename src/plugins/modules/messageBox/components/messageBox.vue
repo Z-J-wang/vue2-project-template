@@ -40,8 +40,8 @@
           </div>
         </main>
         <footer>
-          <el-button v-if="showCancelButton === true" @click="close">{{cancelButtonText}}</el-button>
-          <el-button type="primary" @click="confirm">{{confirmButtonText}}</el-button>
+          <el-button v-if="showCancelButton === true" @click="close">{{ cancelButtonText }}</el-button>
+          <el-button type="primary" @click="confirm">{{ confirmButtonText }}</el-button>
         </footer>
       </div>
     </div>
@@ -195,4 +195,3 @@ export default {
   }
 }
 </style>
-

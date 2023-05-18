@@ -40,7 +40,6 @@ function automatedImportForObject(context) {
   return obj;
 }
 
-
 /**
  * 提取路径中的文件名
  * @param path 路径
@@ -81,10 +80,10 @@ function automatedImportOfRoutes(context) {
 }
 
 /**
-  * 判断 module 是否需要过滤。需要返回 true;不需要返回 false
-  * @param {*} modulePath module 路径
-  * @returns {Boolean}
-  */
+ * 判断 module 是否需要过滤。需要返回 true;不需要返回 false
+ * @param {*} modulePath module 路径
+ * @returns {Boolean}
+ */
 function needFilter(modulePath) {
   const pathArray = modulePath.split('/');
   if (pathArray?.length >= 2) {

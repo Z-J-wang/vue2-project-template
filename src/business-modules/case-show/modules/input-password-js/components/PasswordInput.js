@@ -9,12 +9,8 @@ class PasswordInput {
     this.compositionStatue = false; // 中文输入的标记符：true 为正在进行中文输入
     this.compositionStartCursorIndex = 0; // 记录进行中文输入时光标的位置
     this._containerElem = document.querySelector(constainer_selector); // 密码框父（容器）元素
-    this._inputElem = document.querySelector(
-      `${constainer_selector} .password-input`
-    ); // 密码框 input 本身
-    this._btnToggleElem = document.querySelector(
-      `${constainer_selector} .btn-toggle`
-    ); // 密码显示隐藏按钮元素
+    this._inputElem = document.querySelector(`${constainer_selector} .password-input`); // 密码框 input 本身
+    this._btnToggleElem = document.querySelector(`${constainer_selector} .btn-toggle`); // 密码显示隐藏按钮元素
 
     /**
      * 密码显示隐藏回调函数
@@ -30,7 +26,7 @@ class PasswordInput {
     if (this._btnToggleElem) {
       // 添加显示隐藏按钮点击事件
       this._btnToggleElem.addEventListener('click', this.btnToggleElemClick);
-      this._btnToggleElem.addEventListener('paste', function() {
+      this._btnToggleElem.addEventListener('paste', function () {
         return false;
       });
     }
@@ -73,7 +69,7 @@ class PasswordInput {
     });
 
     // 禁止粘贴
-    this._inputElem.addEventListener('paste', (e) => {
+    this._inputElem.addEventListener('paste', e => {
       e.preventDefault();
       return false;
     });
@@ -152,7 +148,7 @@ class PasswordInput {
     if (spos < 0) spos = elem.value.length;
     if (elem.setSelectionRange) {
       //兼容火狐,谷歌
-      setTimeout(function() {
+      setTimeout(function () {
         elem.setSelectionRange(spos, spos);
         elem.focus();
       }, 0);

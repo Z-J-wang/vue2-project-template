@@ -7,9 +7,7 @@ const routes = [
       name: '密码输入框'
     },
     component: () =>
-      import(
-        /* webpackChunkName: "case-show" */ '@/business-modules/case-show/modules/input-password/views/index.vue'
-      )
+      import(/* webpackChunkName: "case-show" */ '@/business-modules/case-show/modules/input-password/views/index.vue')
   }
 ];
 

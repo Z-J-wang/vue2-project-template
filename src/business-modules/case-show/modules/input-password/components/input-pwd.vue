@@ -11,14 +11,8 @@
       :placeholder="placeholder"
     />
     <div class="btn-show" @click="isShow = !isShow">
-      <img
-        v-if="isShow"
-        src="@/business-modules/case-show/modules/input-password/assets/pwd-show.png"
-      />
-      <img
-        v-else
-        src="@/business-modules/case-show/modules/input-password/assets/pwd-hide.png"
-      />
+      <img v-if="isShow" src="@/business-modules/case-show/modules/input-password/assets/pwd-show.png" />
+      <img v-else src="@/business-modules/case-show/modules/input-password/assets/pwd-hide.png" />
     </div>
   </div>
 </template>
@@ -50,10 +44,10 @@ export default {
     };
   },
   watch: {
-    isShow: function() {
+    isShow: function () {
       this.render(this.modelVal);
     },
-    modelVal: function(val) {
+    modelVal: function (val) {
       this.render(val);
     }
   },
@@ -67,9 +61,7 @@ export default {
     },
 
     compositionstartHandle() {
-      this.compositionStartCursorIndex = this.$refs[
-        'password-input'
-      ].selectionStart; // 记录进行中文输入时光标的位置
+      this.compositionStartCursorIndex = this.$refs['password-input'].selectionStart; // 记录进行中文输入时光标的位置
       this.compositionStatue = true;
     },
 
@@ -134,7 +126,7 @@ export default {
       if (spos < 0) spos = elem.value.length;
       if (elem.setSelectionRange) {
         //兼容火狐,谷歌
-        setTimeout(function() {
+        setTimeout(function () {
           elem.setSelectionRange(spos, spos);
           elem.focus();
         }, 0);
@@ -152,10 +144,7 @@ export default {
       // eslint-disable-next-line no-control-regex
       val = val.replace(/[^\x00-\x80•]/gi, '');
       this.$refs['password-input'].value = val;
-      this.cursorMove(
-        this.$refs['password-input'],
-        this.compositionStartCursorIndex
-      ); // 将光标重置为中文输入前的位置
+      this.cursorMove(this.$refs['password-input'], this.compositionStartCursorIndex); // 将光标重置为中文输入前的位置
     }
   }
 };

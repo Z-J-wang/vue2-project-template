@@ -5,10 +5,15 @@ module.exports = {
     node: true
   },
 
+  extends: ['plugin:vue/essential', 'eslint:recommended', 'prettier'],
+  plugins: [
+    // https://eslint.vuejs.org/user-guide/#why-doesn-t-it-work-on-vue-file
+    // required to lint *.vue files
+    'vue'
+  ],
   parserOptions: {
     parser: 'babel-eslint'
   },
-
   rules: {
     'vue/html-indent': [
       'error',
@@ -37,12 +42,11 @@ module.exports = {
     'no-alert': 0,
     'space-before-function-paren': [0, 'always'],
     'no-useless-escape': 0,
+    'no-control-regex': 0,
     indent: ['error', 2, { SwitchCase: 1 }],
     quotes: [1, 'single'],
     semi: [2, 'always']
   },
-
-  extends: ['plugin:vue/essential', 'eslint:recommended'],
 
   overrides: [
     {

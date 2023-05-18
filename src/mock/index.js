@@ -10,7 +10,7 @@ import Mock from 'mockjs';
  */
 if (process.env.NODE_ENV === 'mock') {
   // 当环境变量 NODE_ENV 等于 mock 时自动导入mock的 module
-  
+
   // 设置拦截ajax请求的相应时间
   Mock.setup({
     timeout: '200-600'

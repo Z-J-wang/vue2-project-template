@@ -3,7 +3,7 @@
     <el-form :model="pulicData" ref="pulicData" :rules="pulicDataRule" label-width="100px">
       <el-form-item label="文章标签：" prop="tags">
         <el-tag
-          v-for="(tag,i) in pulicData.tags"
+          v-for="(tag, i) in pulicData.tags"
           :key="i"
           closable
           :disable-transitions="false"
@@ -25,7 +25,11 @@
               :key="tag.id"
               :disable-transitions="false"
               @click="selecTag(tag.name)"
-            >{{tag.name}}</el-tag>
+            >
+              {{
+                tag.name
+              }}
+            </el-tag>
           </div>
         </div>
       </el-form-item>
@@ -42,7 +46,7 @@
       <el-form-item label="文章简介：" prop="introduction">
         <el-input
           type="textarea"
-          :autosize="{ minRows: 10, maxRows: 20}"
+          :autosize="{ minRows: 10, maxRows: 20 }"
           placeholder="请输入内容"
           :show-word-limit="true"
           maxlength="500"
@@ -134,7 +138,7 @@ export default {
 
     // 发布
     pulic() {
-      this.$refs.pulicData.validate(async (valid) => {
+      this.$refs.pulicData.validate(async valid => {
         if (valid) {
           const params = {
             id: this.artilce.id,

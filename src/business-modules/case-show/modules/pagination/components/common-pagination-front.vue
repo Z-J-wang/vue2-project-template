@@ -9,7 +9,7 @@
       @current-change="handleCurrentChange"
     ></el-pagination>
     <div class="toolbar">
-      <div class="total-page">共 {{totalPages}} 页</div>
+      <div class="total-page">共 {{ totalPages }} 页</div>
       <div class="jumpTo">
         <div class="jumpToInput">
           <span>到第</span>

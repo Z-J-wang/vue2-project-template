@@ -13,7 +13,12 @@ export default {
   name: 'carousel',
   data() {
     return {
-      imgs: [require('@/assets/img/home/banner/banner1.jpeg'), require('@/assets/img/home/banner/banner2.jpeg'), require('@/assets/img/home/banner/banner3.jpeg'), require('@/assets/img/home/banner/banner4.jpeg')]
+      imgs: [
+        require('@/assets/img/home/banner/banner1.jpeg'),
+        require('@/assets/img/home/banner/banner2.jpeg'),
+        require('@/assets/img/home/banner/banner3.jpeg'),
+        require('@/assets/img/home/banner/banner4.jpeg')
+      ]
     };
   }
 };

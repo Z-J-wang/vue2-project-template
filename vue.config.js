@@ -77,7 +77,7 @@ module.exports = {
               }
             },
             common: {
-              name: `chunk-common`,
+              name: 'chunk-common',
               minChunks: 2,
               priority: -20,
               chunks: 'all',
@@ -85,7 +85,7 @@ module.exports = {
             },
             element: {
               chunks: 'all',
-              name: `element-ui`,
+              name: 'element-ui',
               test: /[\\/]element-ui[\\/]/,
               minChunks: 2,
               priority: 0

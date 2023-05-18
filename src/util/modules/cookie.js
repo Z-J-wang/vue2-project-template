@@ -1,7 +1,7 @@
 import vueCookies from 'vue-cookies';
 
 export default class Cookies {
-  constructor () {
+  constructor() {
     // 设置全局 Cookie 过期时间
     vueCookies.config('30d');
   }
@@ -10,7 +10,7 @@ export default class Cookies {
    * 根据 key 获取 cookie
    * @param {*} key
    */
-  getCookie (key) {
+  getCookie(key) {
     return vueCookies.get(key);
   }
 
@@ -19,7 +19,7 @@ export default class Cookies {
    * @param {*} key
    * @param {*} value
    */
-  setCookie (key, value) {
+  setCookie(key, value) {
     return vueCookies.set(key, value, '1d');
   }
 
@@ -27,14 +27,14 @@ export default class Cookies {
    * 删除 key 的 cookie
    * @param {*} key
    */
-  removeCookie (key) {
+  removeCookie(key) {
     return vueCookies.remove(key);
   }
 
   /**
    * 获取 token
    */
-  getToken () {
+  getToken() {
     return vueCookies.get('token');
   }
 
@@ -42,21 +42,21 @@ export default class Cookies {
    * 添加一个 token
    * @param token
    */
-  setToken (token) {
+  setToken(token) {
     return vueCookies.set('token', token, '1d');
   }
 
   /**
    * 删除 token
    */
-  removeToken () {
+  removeToken() {
     return vueCookies.remove('token');
   }
 
   /**
    * 检查 token
    */
-  hasToken () {
+  hasToken() {
     return vueCookies.isKey('token');
   }
 
@@ -64,7 +64,7 @@ export default class Cookies {
    * 根据 key 获取 cookie
    * @param {*} key
    */
-  getUserInfo () {
+  getUserInfo() {
     return vueCookies.get('userInfo');
   }
 
@@ -73,7 +73,7 @@ export default class Cookies {
    * @param {*} key
    * @param {*} value
    */
-  setUserInfo (userinfo) {
+  setUserInfo(userinfo) {
     return vueCookies.set('userInfo', userinfo, '1d');
   }
 
@@ -81,7 +81,7 @@ export default class Cookies {
    * 删除 key 的 cookie
    * @param {*} key
    */
-  removeUserInfo () {
+  removeUserInfo() {
     return vueCookies.remove('userInfo');
   }
 }

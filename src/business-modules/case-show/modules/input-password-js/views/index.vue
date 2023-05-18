@@ -1,9 +1,5 @@
 <template>
-  <template-code
-    :HTML="sourcecode.HTML"
-    :Javascript="sourcecode.Javascript"
-    :CSS="sourcecode.CSS"
-  >
+  <template-code :HTML="sourcecode.HTML" :Javascript="sourcecode.Javascript" :CSS="sourcecode.CSS">
     <h3 slot="title">密码输入框组件</h3>
     <div slot="show">
       <inputPwdVue v-model="password" />

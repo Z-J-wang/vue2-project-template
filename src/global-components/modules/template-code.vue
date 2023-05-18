@@ -48,7 +48,7 @@ export default {
 };
 </script>
 
-<style lang='less' scoped>
+<style lang="less" scoped>
 .title {
   margin: 40px 0;
 }

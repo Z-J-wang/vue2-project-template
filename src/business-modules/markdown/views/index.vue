@@ -7,7 +7,13 @@
       <el-input placeholder="文章标题" v-model="artilce.title"></el-input>
       <el-button type="primary" round @click="save">保存</el-button>
     </div>
-    <mavon-editor ref="md" class="mavon" v-model="artilce.content" :toolbars="toolbars" @imgAdd="$imgAdd"></mavon-editor>
+    <mavon-editor
+      ref="md"
+      class="mavon"
+      v-model="artilce.content"
+      :toolbars="toolbars"
+      @imgAdd="$imgAdd"
+    ></mavon-editor>
     <public-drawer :visible="drawerVisible" :artilce="artilce" @close="drawerVisible = false"></public-drawer>
   </div>
 </template>

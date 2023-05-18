@@ -5,7 +5,7 @@
       <div class="list-contaner">
         <ul>
           <li v-for="(item, i) in componentList" :key="i">
-            <router-link :to="item.path" tag="a">{{item.meta.name}}</router-link>
+            <router-link :to="item.path" tag="a">{{ item.meta.name }}</router-link>
           </li>
         </ul>
       </div>
@@ -29,7 +29,7 @@ export default {
 };
 </script>
 
-<style lang='less' scoped>
+<style lang="less" scoped>
 .case-show {
   h2 {
     margin: 0;

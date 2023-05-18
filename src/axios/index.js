@@ -1,4 +1,4 @@
-import AxiosConfig from './config';  // 导入 axios 配置类
+import AxiosConfig from './config'; // 导入 axios 配置类
 import util from '@/util/index';
 
 // 自动导入 module 子模块的 axios

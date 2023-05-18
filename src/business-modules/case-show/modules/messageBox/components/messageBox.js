@@ -37,4 +37,3 @@ export default {
     Vue.prototype.$messageBox = messageBox; // 将组件暴露出去，并挂载在Vue的prototype上
   }
 };
-
