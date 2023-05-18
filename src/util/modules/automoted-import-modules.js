@@ -128,4 +128,8 @@ function isFilterModule(moduleNames) {
   return ret;
 }
 
-export { automatedImportForObject, automatedImportForArray, automatedImportOfRoutes };
+export {
+  automatedImportForObject,
+  automatedImportForArray,
+  automatedImportOfRoutes
+};

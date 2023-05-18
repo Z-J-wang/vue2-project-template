@@ -9,8 +9,12 @@ class PasswordInput {
     this.compositionStatue = false; // 中文输入的标记符：true 为正在进行中文输入
     this.compositionStartCursorIndex = 0; // 记录进行中文输入时光标的位置
     this._containerElem = document.querySelector(constainer_selector); // 密码框父（容器）元素
-    this._inputElem = document.querySelector(`${constainer_selector} .password-input`); // 密码框 input 本身
-    this._btnToggleElem = document.querySelector(`${constainer_selector} .btn-toggle`); // 密码显示隐藏按钮元素
+    this._inputElem = document.querySelector(
+      `${constainer_selector} .password-input`
+    ); // 密码框 input 本身
+    this._btnToggleElem = document.querySelector(
+      `${constainer_selector} .btn-toggle`
+    ); // 密码显示隐藏按钮元素
 
     /**
      * 密码显示隐藏回调函数

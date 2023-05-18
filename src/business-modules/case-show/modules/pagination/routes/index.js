@@ -7,7 +7,9 @@ const routes = [
       name: '基于 element-ui 的分页控件二次开发'
     },
     component: () =>
-      import(/* webpackChunkName: "case-show" */ '@/business-modules/case-show/modules/pagination/views/index.vue')
+      import(
+        /* webpackChunkName: "case-show" */ '@/business-modules/case-show/modules/pagination/views/index.vue'
+      )
   }
 ];
 

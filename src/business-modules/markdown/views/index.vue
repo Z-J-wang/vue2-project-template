@@ -14,7 +14,11 @@
       :toolbars="toolbars"
       @imgAdd="$imgAdd"
     ></mavon-editor>
-    <public-drawer :visible="drawerVisible" :artilce="artilce" @close="drawerVisible = false"></public-drawer>
+    <public-drawer
+      :visible="drawerVisible"
+      :artilce="artilce"
+      @close="drawerVisible = false"
+    ></public-drawer>
   </div>
 </template>
 
@@ -104,7 +108,10 @@ export default {
       var formdata = new FormData();
       formdata.append('file', $file);
       const { data: res } = await this.$HttpApi.uploadImage(formdata);
-      this.$refs.md.$img2Url(pos, `${process.env.VUE_APP_IMAGE_URL}/${res.url}`);
+      this.$refs.md.$img2Url(
+        pos,
+        `${process.env.VUE_APP_IMAGE_URL}/${res.url}`
+      );
     }
   }
 };

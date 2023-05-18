@@ -1,6 +1,8 @@
 <template>
   <p class="footer-bar">
-    <a href="https://beian.miit.gov.cn/#/Integrated/recordQuery" target="_blank">ICP 备案号：粤ICP备2020073597号</a>
+    <a href="https://beian.miit.gov.cn/#/Integrated/recordQuery" target="_blank"
+      >ICP 备案号：粤ICP备2020073597号</a
+    >
   </p>
 </template>
 

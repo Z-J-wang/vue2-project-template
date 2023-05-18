@@ -1,5 +1,8 @@
 <template>
-  <div class="common-pagination-front" v-if="!(hideOnSinglePage && total < pageSize)">
+  <div
+    class="common-pagination-front"
+    v-if="!(hideOnSinglePage && total < pageSize)"
+  >
     <el-pagination
       background
       layout="prev, pager, next"
@@ -13,7 +16,11 @@
       <div class="jumpTo">
         <div class="jumpToInput">
           <span>到第</span>
-          <el-input type="number" v-model.number="jumpToPage" @keyup.native.enter="jump"></el-input>
+          <el-input
+            type="number"
+            v-model.number="jumpToPage"
+            @keyup.native.enter="jump"
+          ></el-input>
           <span>页</span>
         </div>
         <el-button @click="jump">确定</el-button>

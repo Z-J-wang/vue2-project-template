@@ -3,7 +3,9 @@
     <el-image v-show="artileData.img" :src="artileData.img"></el-image>
     <div class="content">
       <h3 class="title">
-        <router-link :to="{ path: `/blog-detail/${artileData.id}` }" tag="a">{{ artileData.title }}</router-link>
+        <router-link :to="{ path: `/blog-detail/${artileData.id}` }" tag="a">{{
+          artileData.title
+        }}</router-link>
       </h3>
       <p class="intro">{{ artileData.introduction }}</p>
       <ul class="tags">

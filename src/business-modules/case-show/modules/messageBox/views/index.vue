@@ -1,5 +1,9 @@
 <template>
-  <template-code :HTML="sourcecode.HTML" :Javascript="sourcecode.Javascript" :CSS="sourcecode.CSS">
+  <template-code
+    :HTML="sourcecode.HTML"
+    :Javascript="sourcecode.Javascript"
+    :CSS="sourcecode.CSS"
+  >
     <h3 slot="title">富文本编辑器组件-wangEditor</h3>
     <div slot="show">
       <el-button @click="open('success')">success messageBox</el-button>

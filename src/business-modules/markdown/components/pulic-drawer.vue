@@ -2,45 +2,30 @@
   <el-drawer title="完善文章信息" :visible.sync="drawer" direction="rtl" @closed="handleClose">
     <el-form :model="pulicData" ref="pulicData" :rules="pulicDataRule" label-width="100px">
       <el-form-item label="文章标签：" prop="tags">
-        <el-tag
-          v-for="(tag, i) in pulicData.tags"
-          :key="i"
-          closable
-          :disable-transitions="false"
-          @close="delTag(i)"
-        >{{tag}}</el-tag>
+        <el-tag v-for="(tag, i) in pulicData.tags" :key="i" closable :disable-transitions="false" @close="delTag(i)">{{
+          tag
+        }}</el-tag>
         <el-button
           class="button-new-tag"
           size="small"
           @click="tagControlVisible = true"
           v-show="4 - pulicData.tags.length"
-        >+ 添加</el-button>
+          >+ 添加</el-button
+        >
         <div class="tag-contain" v-show="tagControlVisible">
           <p>可以添加标签: {{ 4 - pulicData.tags.length }} 个</p>
           <i class="close el-icon-close" @click="tagControlVisible = false"></i>
           <el-input v-model="newTag" size="small" placeholder="新增标签" @keyup.native.enter="addTag"></el-input>
           <div>
-            <el-tag
-              v-for="tag in allTags"
-              :key="tag.id"
-              :disable-transitions="false"
-              @click="selecTag(tag.name)"
+            <el-tag v-for="tag in allTags" :key="tag.id" :disable-transitions="false" @click="selecTag(tag.name)">
+              {{ tag.name }}</el-tag
             >
-              {{
-                tag.name
-              }}
-            </el-tag>
           </div>
         </div>
       </el-form-item>
       <el-form-item label="文章分类：" prop="category">
         <el-select v-model="pulicData.category" filterable allow-create>
-          <el-option
-            v-for="item in categories"
-            :key="item.id"
-            :label="item.name"
-            :value="item.name"
-          ></el-option>
+          <el-option v-for="item in categories" :key="item.id" :label="item.name" :value="item.name"></el-option>
         </el-select>
       </el-form-item>
       <el-form-item label="文章简介：" prop="introduction">

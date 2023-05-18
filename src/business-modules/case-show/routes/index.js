@@ -7,7 +7,10 @@ let routes = [
     meta: {
       scrollToTop: true
     },
-    component: () => import(/* webpackChunkName: "case-show" */ '@/business-modules/case-show/views/index.vue')
+    component: () =>
+      import(
+        /* webpackChunkName: "case-show" */ '@/business-modules/case-show/views/index.vue'
+      )
   },
   ...modulesRoutes
 ];

@@ -3,7 +3,9 @@ import VueRouter from 'vue-router';
 import { automatedImportOfRoutes } from '@/util/modules/routerHandle';
 
 // 自动加载 modules 的路由文件
-const modulesRoutes = automatedImportOfRoutes(require.context('@/business-modules/', true, /\/routes\/index.js/));
+const modulesRoutes = automatedImportOfRoutes(
+  require.context('@/business-modules/', true, /\/routes\/index.js/)
+);
 
 Vue.use(VueRouter);
 
@@ -28,7 +30,8 @@ const routes = [
     meta: {
       scrollToTop: true
     },
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () =>
+      import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
     path: '/404',

@@ -8,7 +8,9 @@ const state = {};
 const mutations = {};
 const actions = {};
 const getter = {};
-const moudules = automatedImportForObject(require.context('@/store/modules', true, /.\/.+\.js/));
+const moudules = automatedImportForObject(
+  require.context('@/store/modules', true, /.\/.+\.js/)
+);
 
 export default new Vuex.Store({
   state,

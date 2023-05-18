@@ -12,7 +12,10 @@
             <p v-else>暂无</p>
           </el-collapse-item>
           <el-collapse-item title="Javascript" name="Javascript">
-            <pre v-if="Javascript" v-highlightjs="Javascript"><code></code></pre>
+            <pre
+              v-if="Javascript"
+              v-highlightjs="Javascript"
+            ><code></code></pre>
             <p v-else>暂无</p>
           </el-collapse-item>
           <el-collapse-item title="CSS" name="CSS">

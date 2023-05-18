@@ -7,7 +7,9 @@ const routes = [
       name: 'messageBox'
     },
     component: () =>
-      import(/* webpackChunkName: "messageBox" */ '@/business-modules/case-show/modules/messageBox/views/index.vue')
+      import(
+        /* webpackChunkName: "messageBox" */ '@/business-modules/case-show/modules/messageBox/views/index.vue'
+      )
   }
 ];
 

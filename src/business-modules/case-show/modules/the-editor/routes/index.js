@@ -7,7 +7,9 @@ const routes = [
       name: '富文本编辑器-wangEditor'
     },
     component: () =>
-      import(/* webpackChunkName: "case-show" */ '@/business-modules/case-show/modules/the-editor/views/index.vue')
+      import(
+        /* webpackChunkName: "case-show" */ '@/business-modules/case-show/modules/the-editor/views/index.vue'
+      )
   }
 ];
 

@@ -5,7 +5,10 @@ const routes = [
     meta: {
       auth: 3
     },
-    component: () => import(/* webpackChunkName: "markdown" */ '@/business-modules/markdown/views/index.vue')
+    component: () =>
+      import(
+        /* webpackChunkName: "markdown" */ '@/business-modules/markdown/views/index.vue'
+      )
   }
 ];
 
