@@ -18,9 +18,7 @@
           <a @click="back()"> <i class="el-icon-back"></i> 返回上一页 </a>
         </router-link>
         <span style="padding: 0 40px">|</span>
-        <router-link to="/" tag="a">
-          <i class="el-icon-s-home"></i> 返回首页
-        </router-link>
+        <router-link to="/" tag="a"> <i class="el-icon-s-home"></i> 返回首页 </router-link>
       </div>
     </div>
   </div>

@@ -16,7 +16,5 @@ if (process.env.NODE_ENV === 'mock') {
     timeout: '200-600'
   });
 
-  util.automatedImportForObject(
-    require.context('@/mock/modules', true, /.+\.js/)
-  );
+  util.automatedImportForObject(require.context('@/mock/modules', true, /.+\.js/));
 }
