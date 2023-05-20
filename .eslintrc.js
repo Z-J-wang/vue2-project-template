@@ -5,9 +5,8 @@ module.exports = {
     node: true
   },
 
-  extends: ['plugin:vue/essential', 'eslint:recommended', 'prettier'],
+  extends: ['plugin:vue/essential', 'eslint:recommended', 'plugin:prettier/recommended'],
   plugins: [
-    'prettier',
     // https://eslint.vuejs.org/user-guide/#why-doesn-t-it-work-on-vue-file
     // required to lint *.vue files
     'vue'
@@ -16,7 +15,6 @@ module.exports = {
     parser: 'babel-eslint'
   },
   rules: {
-    'prettier/prettier': 'error',
     'vue/name-property-casing': ['error', 'kebab-case'],
     'no-console': 'off',
     'no-debugger': 'off',
