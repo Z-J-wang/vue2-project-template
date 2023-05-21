@@ -1,7 +1,7 @@
 <template>
   <div class="password-input" :style="{ width: width }">
     <input
-      style="ime-mode: disabled"
+      style="ime-mode: disabled;"
       :value="hideValue"
       @compositionstart="compositionstartHandle"
       @compositionend="compositionendHandle"
@@ -154,25 +154,28 @@ export default {
 .password-input {
   position: relative;
   margin: 0 auto;
+
   input {
-    height: 28px;
-    width: 100%;
-    line-height: 28px;
-    padding-left: 10px;
     padding-right: 30px;
+    padding-left: 10px;
+    width: 100%;
+    height: 28px;
+    line-height: 28px;
     box-sizing: border-box;
   }
+
   .btn-show {
     position: absolute;
     top: 50%;
     right: 0;
-    transform: translateY(-50%);
     display: flex;
-    height: 100%;
-    width: 30px;
-    align-items: center;
     justify-content: flex-start;
+    align-items: center;
+    width: 30px;
+    height: 100%;
+    transform: translateY(-50%);
     cursor: pointer;
+
     img {
       width: 20px;
       height: 20px;

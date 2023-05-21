@@ -14,12 +14,14 @@ export default {
 .footer-bar {
   position: relative;
   bottom: -1px;
-  padding: 16px 0;
   margin: 0;
-  background-color: #495c69;
+  padding: 16px 0;
+  background-color: #495C69;
+
   a {
     text-decoration: none;
-    color: #fff;
+    color: #FFFFFF;
+
     &:hover {
       text-decoration: underline;
     }

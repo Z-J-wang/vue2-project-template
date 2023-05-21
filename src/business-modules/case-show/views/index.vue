@@ -36,24 +36,29 @@ export default {
     padding-top: 40px;
     padding-bottom: 80px;
   }
+
   .list-contaner {
-    width: 1180px;
     margin: 0 auto;
+    width: 1180px;
+
     ul {
       display: flex;
       justify-content: flex-start;
       align-items: center;
       flex-wrap: wrap;
+
       li {
-        width: 33%;
         margin-bottom: 20px;
         padding-left: 20px;
+        width: 33%;
+        font-size: 20px;
         text-align: left;
         list-style: none;
-        font-size: 20px;
+
         a {
           text-decoration: none;
-          color: #fff;
+          color: #FFFFFF;
+
           &:hover {
             text-decoration: underline;
           }

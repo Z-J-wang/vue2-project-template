@@ -95,87 +95,102 @@ export default {
 <style lang="less" scoped>
 .common-pagination-front {
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
-  width: 100%;
-  padding-left: 16px;
+  align-items: center;
   padding-right: 16px;
+  padding-left: 16px;
+  width: 100%;
   font-size: 14px;
   color: #666666;
+  flex-direction: row;
+
   .el-pagination {
     /deep/ button {
+      border: 1px solid #E5E5E5;
       min-width: 40px;
       height: 40px;
+      background-color: #FFFFFF;
       line-height: 40px;
-      background-color: #fff;
-      border: 1px solid #e5e5e5;
+
       &:hover {
-        color: #3677fb;
-        border-color: #3677fb;
+        border-color: #3677FB;
+        color: #3677FB;
       }
     }
+
     /deep/ .el-pager {
       li {
+        border: 1px solid #E5E5E5;
         min-width: 40px;
         height: 40px;
+        background-color: #FFFFFF;
         line-height: 40px;
-        background-color: #fff;
-        border: 1px solid #e5e5e5;
+
         &:hover {
-          color: #3677fb;
-          border-color: #3677fb;
+          border-color: #3677FB;
+          color: #3677FB;
         }
       }
+
       li.active {
-        background-color: #3677fb;
-        border-color: #3677fb;
+        border-color: #3677FB;
+        background-color: #3677FB;
+
         &:hover {
-          color: #fff;
+          color: #FFFFFF;
         }
       }
     }
   }
+
   .toolbar {
     display: flex;
+
     .total-page {
       display: flex;
       justify-content: center;
       align-items: center;
       margin-right: 8px;
     }
+
     .jumpTo {
       display: flex;
+
       .jumpToInput {
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
         margin-right: 16px;
+
         .el-input {
-          flex: 1;
-          width: 40px;
-          margin-left: 4px;
           margin-right: 4px;
+          margin-left: 4px;
+          width: 40px;
+          flex: 1;
+
           /deep/ .el-input__inner {
-            text-align: center;
+            border-color: #E5E5E5;
             padding-top: 11px;
+            padding-right: 5px;
             padding-bottom: 11px;
             padding-left: 5px;
-            padding-right: 5px;
-            border-color: #e5e5e5;
+            text-align: center;
+
             &::-webkit-inner-spin-button {
-              -webkit-appearance: none;
+              appearance: none;
             }
+
             &::-webkit-outer-spin-button {
-              -webkit-appearance: none;
+              appearance: none;
             }
           }
         }
       }
+
       .el-button {
+        border-color: #E5E5E5;
         width: 80px;
         min-width: 80px;
-        border-color: #e5e5e5;
       }
     }
   }

@@ -52,25 +52,29 @@ export default {
 .title {
   margin: 40px 0;
 }
+
 .main-contain {
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  width: 100%;
   margin-bottom: 40px;
+  width: 100%;
+  flex-direction: row;
+
   & > div {
-    max-width: 50%;
     overflow: auto;
-    flex: 1;
-    height: calc(100vh - 62px - 53px - 105px);
     margin: 0 20px;
-    padding: 30px;
-    text-align: left;
     border-radius: 10px;
-    background-color: #fff;
+    padding: 30px;
+    max-width: 50%;
+    height: calc(100vh - 62px - 53px - 105px);
+    text-align: left;
+    background-color: #FFFFFF;
+    flex: 1;
+
     &::-webkit-scrollbar {
       display: none;
     }
+
     &:first-child {
       margin-right: 0;
     }

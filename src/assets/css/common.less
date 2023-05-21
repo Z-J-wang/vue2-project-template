@@ -5,6 +5,7 @@
 * {
   box-sizing: border-box;
 }
+
 .p-l-60 {
   padding-left: 60px;
 }
@@ -51,12 +52,12 @@
 }
 
 .clearfix::after {
-  content: '';
   display: block;
-  visibility: hidden;
+  clear: both;
   height: 0;
   font-size: 0;
-  clear: both;
+  visibility: hidden;
+  content: '';
 }
 
 .line-break,

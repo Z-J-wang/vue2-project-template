@@ -114,15 +114,18 @@ export default {
 .md-editor {
   margin: 0;
   height: 100vh;
-  background-color: #869d9d;
+  background-color: #869D9D;
+
   .toolbar-top {
     display: flex;
     justify-content: center;
+    padding: 10px 20px 20px;
     width: 100%;
-    padding: 10px 20px 20px 20px;
+
     .el-input {
       flex: 1;
       margin: 0 10px;
+
       .el-input__inner {
         border-radius: 20px;
       }
@@ -144,9 +147,9 @@ export default {
   // }
 
   .mavon {
+    margin: 0 auto;
     width: calc(100vw - 40px);
     height: calc(100vh - 130px);
-    margin: 0 auto;
   }
 }
 </style>

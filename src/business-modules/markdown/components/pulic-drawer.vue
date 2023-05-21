@@ -180,38 +180,45 @@ export default {
   padding: 20px;
   text-align: left;
 }
+
 .el-tag + .el-tag {
   margin-left: 10px;
 }
+
 .button-new-tag {
   margin-left: 10px;
 }
+
 .tag-contain {
   position: relative;
   margin-top: 20px;
-  padding: 15px;
-  border: 1px solid #2e317c;
+  border: 1px solid #2E317C;
   border-radius: 5px;
+  padding: 15px;
+
   p {
     margin: 0;
     padding-bottom: 15px;
     font-size: 14px;
     line-height: 14px;
   }
+
   .close {
     position: absolute;
     top: 15px;
     right: 15px;
     cursor: pointer;
   }
+
   .el-tag {
     margin: 0 5px;
     cursor: pointer;
   }
 }
+
 .toolbar {
   position: absolute;
-  bottom: 30px;
   right: 30px;
+  bottom: 30px;
 }
 </style>

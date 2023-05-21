@@ -27,23 +27,28 @@ export default {
 
 <style lang="less" scoped>
 .header {
-  background-color: #545c64;
+  background-color: #545C64;
+
   .contain {
     display: flex;
-    width: 1180px;
     margin: 0 auto;
+    width: 1180px;
+
     div {
       line-height: 61px;
     }
+
     .logo {
       margin-right: 60px;
-      color: #e6e6e6;
+      color: #E6E6E6;
     }
+
     .el-menu {
       position: relative;
       border: none;
       flex: 1;
     }
+
     .toolbar {
       margin-left: 60px;
     }

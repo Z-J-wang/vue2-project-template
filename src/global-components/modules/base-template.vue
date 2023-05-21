@@ -20,7 +20,8 @@ export default {
 <style lang="less" scoped>
 .base-template {
   min-height: 100vh;
-  background-color: #869d9d;
+  background-color: #869D9D;
+
   .main {
     min-height: calc(100vh - 62px - 53px);
   }

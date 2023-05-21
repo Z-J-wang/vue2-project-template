@@ -27,6 +27,7 @@ export default {
 <style lang="less" scoped>
 .carousel {
   padding: 20px 100px;
+
   .el-carousel {
     /deep/ * {
       .el-image {

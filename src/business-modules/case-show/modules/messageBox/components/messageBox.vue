@@ -107,6 +107,7 @@ export default {
 .messageBox-srcoll-hideen {
   overflow: hidden;
 }
+
 .messageBox {
   position: fixed;
   top: 0;
@@ -115,23 +116,25 @@ export default {
   width: 100%;
   height: 100%;
   background-color: #00000080;
+
   .contain {
     position: absolute;
     top: 45%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    border-radius: 4px;
     width: 500px;
     height: 240px;
-    border-radius: 4px;
+    background-color: #FFFFFF;
+    transform: translate(-50%, -50%);
     box-sizing: border-box;
 
-    background-color: #ffffff;
     header {
+      padding: 5px;
       width: 100%;
       height: 36px;
       text-align: right;
-      padding: 5px;
       box-sizing: border-box;
+
       .close {
         display: inline-flex;
         justify-content: center;
@@ -140,35 +143,41 @@ export default {
         height: 36px;
         font-weight: bold;
         cursor: pointer;
+
         &:hover,
         &:focus {
-          background: #1367da14;
           border-radius: 4px;
-          color: #1367da;
+          color: #1367DA;
+          background: #1367DA14;
         }
       }
     }
+
     main {
       display: flex;
-      width: 100%;
-      max-height: 127px;
       overflow-y: hidden;
       padding: 30px 40px;
+      width: 100%;
+      max-height: 127px;
       box-sizing: border-box;
+
       & > div:first-child {
         width: 40px;
         height: 40px;
       }
+
       .content {
         display: flex;
-        flex-wrap: wrap;
         align-items: center;
+        padding-left: 16px;
         width: 350px;
         min-height: 40px;
-        padding-left: 16px;
+        flex-wrap: wrap;
+
         & * {
           width: 100%;
         }
+
         h3 {
           margin-bottom: 4px;
           font-size: 18px;
@@ -176,20 +185,22 @@ export default {
           color: #333333;
           line-height: 22px;
         }
+
         p {
-          text-align: left;
           font-size: 14px;
+          text-align: left;
           color: #999999;
         }
       }
     }
+
     footer {
       // box-sizing: border-box;
       position: absolute;
       bottom: 0;
+      padding: 13px 16px;
       width: 100%;
       height: 67px;
-      padding: 13px 16px;
       text-align: right;
     }
   }

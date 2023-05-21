@@ -49,16 +49,18 @@ export default {
 </script>
 <style lang="less" scoped>
 main {
-  width: 1180px;
   margin: 40px auto;
-  padding: 0 20px;
   border-radius: 4px;
-  background-color: #fff;
+  padding: 0 20px;
+  width: 1180px;
+  background-color: #FFFFFF;
+
   h3 {
-    color: #5e665b;
+    border-bottom: 1px solid #8A988E;
     padding: 16px 0;
-    border-bottom: 1px solid #8a988e;
+    color: #5E665B;
   }
+
   div {
     padding-bottom: 1px;
   }

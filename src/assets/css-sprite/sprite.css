@@ -1,6 +1,35 @@
-.icon { display: inline-block; background-image: url(./sprite.png);background-size: 640px 420px;}
-.icon-error { width: 200px; height: 200px; background-position: 0px 0px; }
-.icon-info { width: 200px; height: 200px; background-position: -220px 0px; }
-.icon-question { width: 200px; height: 200px; background-position: 0px -220px; }
-.icon-success { width: 200px; height: 200px; background-position: -220px -220px; }
-.icon-warning { width: 200px; height: 200px; background-position: -440px 0px; }
+.icon {
+  display: inline-block;
+  background-image: url('./sprite.png');
+  background-size: 640px 420px;
+}
+
+.icon-error {
+  width: 200px;
+  height: 200px;
+  background-position: 0 0;
+}
+
+.icon-info {
+  width: 200px;
+  height: 200px;
+  background-position: -220px 0;
+}
+
+.icon-question {
+  width: 200px;
+  height: 200px;
+  background-position: 0 -220px;
+}
+
+.icon-success {
+  width: 200px;
+  height: 200px;
+  background-position: -220px -220px;
+}
+
+.icon-warning {
+  width: 200px;
+  height: 200px;
+  background-position: -440px 0;
+}

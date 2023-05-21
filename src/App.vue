@@ -14,12 +14,13 @@
 <style lang="less">
 @app-footer-height: 60px;
 @app-main-height: calc(~'100vh - @{app-footer-height}');
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #2C3E50;
 }
 
 body {
@@ -27,10 +28,10 @@ body {
 }
 
 .app_mian {
-  min-height: @app-main-height;
-  padding: 0 !important;
-  box-sizing: border-box;
   overflow: hidden;
+  padding: 0 !important;
+  min-height: @app-main-height;
+  box-sizing: border-box;
 }
 
 .app_footer {

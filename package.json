@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "build:analyze": "cross-env NODE_ENV_BUNDLE_ANALYZE=true vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lint:prettier": "prettier --config .prettierrc --ignore-path .prettierignore --check ./"
+    "lint:prettier": "prettier --config .prettierrc --ignore-path .prettierignore --check ./",
+    "lint:stylelint": "stylelint --config .stylelintrc.js ./**/*.{html,js,ts,vue,css,sass,scss,less} --fix"
   },
   "dependencies": {
     "axios": "^0.20.0",
@@ -32,16 +33,19 @@
     "cross-env": "^7.0.3",
     "element-ui": "^2.13.2",
     "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
     "image-webpack-loader": "^7.0.1",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
+    "stylelint": "^13.3.3",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-order": "^6.0.3",
     "terser-webpack-plugin": "^4.2.3",
     "vue-template-compiler": "^2.6.11",
     "webpack-bundle-analyzer": "^4.5.0"

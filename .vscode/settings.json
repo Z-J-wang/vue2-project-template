@@ -10,6 +10,9 @@
   "[vue]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  },
   "eslint.format.enable": true,
   "files.eol": "\n",
   "[html]": {
