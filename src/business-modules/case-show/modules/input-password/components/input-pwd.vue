@@ -1,7 +1,7 @@
 <template>
   <div class="password-input" :style="{ width: width }">
     <input
-      style="ime-mode: disabled;"
+      style="ime-mode: disabled"
       :value="hideValue"
       @compositionstart="compositionstartHandle"
       @compositionend="compositionendHandle"

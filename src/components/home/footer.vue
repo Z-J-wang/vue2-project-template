@@ -16,11 +16,11 @@ export default {
   bottom: -1px;
   margin: 0;
   padding: 16px 0;
-  background-color: #495C69;
+  background-color: #495c69;
 
   a {
     text-decoration: none;
-    color: #FFFFFF;
+    color: #ffffff;
 
     &:hover {
       text-decoration: underline;

@@ -114,7 +114,7 @@ export default {
 .md-editor {
   margin: 0;
   height: 100vh;
-  background-color: #869D9D;
+  background-color: #869d9d;
 
   .toolbar-top {
     display: flex;

@@ -53,12 +53,12 @@ main {
   border-radius: 4px;
   padding: 0 20px;
   width: 1180px;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
 
   h3 {
-    border-bottom: 1px solid #8A988E;
+    border-bottom: 1px solid #8a988e;
     padding: 16px 0;
-    color: #5E665B;
+    color: #5e665b;
   }
 
   div {

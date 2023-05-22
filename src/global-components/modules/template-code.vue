@@ -68,7 +68,7 @@ export default {
     max-width: 50%;
     height: calc(100vh - 62px - 53px - 105px);
     text-align: left;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     flex: 1;
 
     &::-webkit-scrollbar {

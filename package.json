@@ -6,9 +6,10 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "build:analyze": "cross-env NODE_ENV_BUNDLE_ANALYZE=true vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "lint:prettier": "prettier --config .prettierrc --ignore-path .prettierignore --check ./",
-    "lint:stylelint": "stylelint --config .stylelintrc.js ./**/*.{html,js,ts,vue,css,sass,scss,less} --fix"
+    "lint": "yarn lint:eslint && yarn lint:stylelint",
+    "lint:fix": "yarn lint:eslint --fix && yarn lint:stylelint --fix",
+    "lint:eslint": "vue-cli-service lint",
+    "lint:stylelint": "stylelint --config .stylelintrc.js ./**/*.{html,js,ts,vue,css,sass,scss,less}"
   },
   "dependencies": {
     "axios": "^0.20.0",

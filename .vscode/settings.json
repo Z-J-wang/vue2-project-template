@@ -1,23 +1,54 @@
 {
-  "vsicons.dontShowNewVersionMessage": true,
+  "editor.tabSize": 2,
   "[typescript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
-  "editor.tabSize": 2,
   "[javascript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
   "[vue]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true
   },
   "eslint.format.enable": true,
   "files.eol": "\n",
-  "[html]": {
-    "editor.defaultFormatter": "vscode.html-language-features"
-  },
+  "stylelint.enable": true,
+  "stylelint.packageManager": "yarn",
+  "stylelint.validate": [
+    "css",
+    "html",
+    "javascript",
+    "javascriptreact",
+    "less",
+    "markdown",
+    "postcss",
+    "sass",
+    "scss",
+    "source.css.styled",
+    "source.markdown.math",
+    "styled-css",
+    "sugarss",
+    "svelte",
+    "typescript",
+    "typescriptreact",
+    "vue",
+    "vue-html",
+    "vue-postcss",
+    "xml",
+    "xsl"
+  ],
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
   "explorer.confirmDragAndDrop": false,
   "vetur.format.defaultFormatterOptions": {
     "prettier": {
@@ -27,24 +58,22 @@
       "end_with_newline": false
     },
     "prettyhtml": {
-      "printWidth": 100,
+      "printWidth": 120,
       "singleQuote": false,
       "wrapAttributes": false,
       "sortAttributes": false
     }
   },
-  "[jsonc]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "vetur.format.defaultFormatter.html": "prettyhtml",
-  "prettier.singleQuote": true,
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
+  "vetur.validation.interpolation": false,
+  "vetur.completion.scaffoldSnippetSources": {
+    "workspace": "💼",
+    "user": "🗒️",
+    "vetur": "✌"
   },
-  "javascript.referencesCodeLens.showOnAllFunctions": true,
-  "typescript.referencesCodeLens.enabled": true,
-  "editor.guides.indentation": false,
-  "editor.guides.bracketPairs": false,
+  "prettier.singleQuote": true,
+  "editor.guides.indentation": true,
+  "editor.guides.bracketPairs": "active",
   "cSpell.userWords": [
     "Alarge",
     "ATAC",
@@ -82,26 +111,10 @@
     "vuelidate",
     "vuex",
     "wangzhijie",
-    "yangyawen",
     "zoomin"
   ],
-  "vetur.validation.interpolation": false,
-  "[css]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "explorer.confirmDelete": false,
-  "[scss]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[html]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
+
   "diffEditor.ignoreTrimWhitespace": false,
   "editor.unicodeHighlight.includeComments": false,
-  "vetur.completion.scaffoldSnippetSources": {
-    "workspace": "💼",
-    "user": "🗒️",
-    "vetur": "✌"
-  },
   "editor.formatOnSave": true
 }

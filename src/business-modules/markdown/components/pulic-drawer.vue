@@ -192,7 +192,7 @@ export default {
 .tag-contain {
   position: relative;
   margin-top: 20px;
-  border: 1px solid #2E317C;
+  border: 1px solid #2e317c;
   border-radius: 5px;
   padding: 15px;
 

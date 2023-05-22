@@ -106,38 +106,38 @@ export default {
 
   .el-pagination {
     /deep/ button {
-      border: 1px solid #E5E5E5;
+      border: 1px solid #e5e5e5;
       min-width: 40px;
       height: 40px;
-      background-color: #FFFFFF;
+      background-color: #ffffff;
       line-height: 40px;
 
       &:hover {
-        border-color: #3677FB;
-        color: #3677FB;
+        border-color: #3677fb;
+        color: #3677fb;
       }
     }
 
     /deep/ .el-pager {
       li {
-        border: 1px solid #E5E5E5;
+        border: 1px solid #e5e5e5;
         min-width: 40px;
         height: 40px;
-        background-color: #FFFFFF;
+        background-color: #ffffff;
         line-height: 40px;
 
         &:hover {
-          border-color: #3677FB;
-          color: #3677FB;
+          border-color: #3677fb;
+          color: #3677fb;
         }
       }
 
       li.active {
-        border-color: #3677FB;
-        background-color: #3677FB;
+        border-color: #3677fb;
+        background-color: #3677fb;
 
         &:hover {
-          color: #FFFFFF;
+          color: #ffffff;
         }
       }
     }
@@ -169,7 +169,7 @@ export default {
           flex: 1;
 
           /deep/ .el-input__inner {
-            border-color: #E5E5E5;
+            border-color: #e5e5e5;
             padding-top: 11px;
             padding-right: 5px;
             padding-bottom: 11px;
@@ -188,7 +188,7 @@ export default {
       }
 
       .el-button {
-        border-color: #E5E5E5;
+        border-color: #e5e5e5;
         width: 80px;
         min-width: 80px;
       }

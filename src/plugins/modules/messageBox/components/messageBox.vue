@@ -124,7 +124,7 @@ export default {
     border-radius: 4px;
     width: 500px;
     height: 240px;
-    background-color: #FFFFFF;
+    background-color: #ffffff;
     transform: translate(-50%, -50%);
     box-sizing: border-box;
 
@@ -147,8 +147,8 @@ export default {
         &:hover,
         &:focus {
           border-radius: 4px;
-          color: #1367DA;
-          background: #1367DA14;
+          color: #1367da;
+          background: #1367da14;
         }
       }
     }

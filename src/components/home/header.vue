@@ -27,7 +27,7 @@ export default {
 
 <style lang="less" scoped>
 .header {
-  background-color: #545C64;
+  background-color: #545c64;
 
   .contain {
     display: flex;
@@ -40,7 +40,7 @@ export default {
 
     .logo {
       margin-right: 60px;
-      color: #E6E6E6;
+      color: #e6e6e6;
     }
 
     .el-menu {

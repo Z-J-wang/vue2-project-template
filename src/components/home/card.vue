@@ -34,17 +34,17 @@ export default {
   justify-content: center;
   align-items: center;
   margin-bottom: 20px;
-  border-bottom: 1px solid #E5E5E5;
+  border-bottom: 1px solid #e5e5e5;
   padding-right: 20px;
   padding-left: 20px;
   width: 100%;
   height: 200px;
-  transition: all .5s;
+  transition: all 0.5s;
 
   &:hover {
     border-radius: 10px;
-    background: #FFFFFF;
-    box-shadow: #CCCCCC 1px 1px 8px;
+    background: #ffffff;
+    box-shadow: #cccccc 1px 1px 8px;
   }
 
   .el-image {
@@ -63,11 +63,11 @@ export default {
 
       a {
         text-decoration: none;
-        color: #8A988E;
-        transition: all .5s;
+        color: #8a988e;
+        transition: all 0.5s;
 
         &:hover {
-          color: #1A6840;
+          color: #1a6840;
         }
       }
     }
@@ -76,7 +76,7 @@ export default {
       margin: 0;
       height: 65px;
       font-size: 14px;
-      color: #2B312C;
+      color: #2b312c;
     }
 
     .tags {
@@ -91,9 +91,9 @@ export default {
 
       /deep/ * {
         .el-tag--plain {
-          border-color: #8A988E;
-          color: #8A988E;
-          background-color: #FFFFFF;
+          border-color: #8a988e;
+          color: #8a988e;
+          background-color: #ffffff;
         }
       }
     }
