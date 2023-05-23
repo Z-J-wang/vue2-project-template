@@ -23,7 +23,7 @@ import { mavonEditor } from 'mavon-editor';
 import 'mavon-editor/dist/css/index.css';
 import publicDrawer from '@/business-modules/markdown/components/pulic-drawer.vue';
 export default {
-  name: 'md-editor',
+  name: 'MdEditor',
   components: { publicDrawer, mavonEditor },
   data() {
     return {

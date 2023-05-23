@@ -14,7 +14,7 @@
 <script>
 import code from '../assets/code';
 export default {
-  name: 'editor',
+  name: 'Editor',
   data() {
     return {
       content: '<p>阿萨大大十大</p>',

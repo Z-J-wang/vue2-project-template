@@ -1,6 +1,5 @@
 node_modules
 /dist
-assets/lib/
-.*ignore
+/public
 yarn.lock
 package-lock.json

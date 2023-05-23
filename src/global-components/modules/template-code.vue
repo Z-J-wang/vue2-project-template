@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: 'template-code',
+  name: 'TemplateCode',
   props: {
     HTML: String,
     Javascript: String,

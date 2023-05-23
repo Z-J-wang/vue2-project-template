@@ -49,7 +49,7 @@
 </template>
 <script>
 export default {
-  name: 'message-box',
+  name: 'MessageBox',
   data() {
     return {
       visible: false,

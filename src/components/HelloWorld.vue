@@ -82,7 +82,7 @@
 
 <script>
 export default {
-  name: 'hello-world',
+  name: 'HelloWorld',
   props: {
     msg: String
   }

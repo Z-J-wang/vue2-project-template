@@ -12,7 +12,7 @@
 import homeHeader from '@/components/home/header.vue';
 import homeFooter from '@/components/home/footer.vue';
 export default {
-  name: 'home',
+  name: 'Home',
   components: { homeHeader, homeFooter }
 };
 </script>

@@ -17,7 +17,7 @@
 import modulesRoutes from '@/business-modules/case-show/util/getModulesRoutes';
 
 export default {
-  name: 'case-show',
+  name: 'CaseShow',
   data() {
     return {
       componentList: []

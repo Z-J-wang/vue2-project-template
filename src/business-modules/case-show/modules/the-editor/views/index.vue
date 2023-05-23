@@ -11,7 +11,7 @@
 import theEditor from '../components/the-editor.vue';
 import code from '../assets/code';
 export default {
-  name: 'editor',
+  name: 'Editor',
   components: {
     theEditor
   },

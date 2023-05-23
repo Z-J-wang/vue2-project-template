@@ -48,7 +48,7 @@
 
 <script>
 export default {
-  name: 'public-drawer',
+  name: 'PublicDrawer',
   props: {
     visible: {
       type: Boolean,

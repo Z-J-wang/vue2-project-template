@@ -15,7 +15,7 @@ module.exports = {
     parser: 'babel-eslint'
   },
   rules: {
-    'vue/name-property-casing': ['error', 'kebab-case'],
+    'vue/name-property-casing': ['error', 'PascalCase'],
     'no-console': 'off',
     'no-debugger': 'off',
     'no-spaced-func': 2,

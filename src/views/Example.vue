@@ -9,7 +9,7 @@
 import ExampleIntroduction from '@c/example/ExampleIntroduction.vue';
 
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
     ExampleIntroduction
   },
