@@ -1,5 +1,7 @@
 {
   "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.unicodeHighlight.includeComments": false,
   "[typescript]": {
     "editor.defaultFormatter": "dbaeumer.vscode-eslint"
   },
@@ -113,8 +115,5 @@
     "wangzhijie",
     "zoomin"
   ],
-
-  "diffEditor.ignoreTrimWhitespace": false,
-  "editor.unicodeHighlight.includeComments": false,
-  "editor.formatOnSave": true
+  "diffEditor.ignoreTrimWhitespace": false
 }
