@@ -20,63 +20,13 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.codeActionsOnSave": {
-    "source.fixAll.stylelint": true
+  "[less]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },
-  "eslint.format.enable": true,
-  "files.eol": "\n",
-  "stylelint.enable": true,
-  "stylelint.packageManager": "yarn",
-  "stylelint.validate": [
-    "css",
-    "html",
-    "javascript",
-    "javascriptreact",
-    "less",
-    "markdown",
-    "postcss",
-    "sass",
-    "scss",
-    "source.css.styled",
-    "source.markdown.math",
-    "styled-css",
-    "sugarss",
-    "svelte",
-    "typescript",
-    "typescriptreact",
-    "vue",
-    "vue-html",
-    "vue-postcss",
-    "xml",
-    "xsl"
-  ],
-  "eslint.validate": ["javascript", "javascriptreact", "typescript", "vue"],
-  "explorer.confirmDragAndDrop": false,
-  "vetur.format.defaultFormatterOptions": {
-    "prettier": {
-      "singleQuote": true //使用单引号而不是双引号
-    },
-    "js-beautify-html": {
-      "end_with_newline": false
-    },
-    "prettyhtml": {
-      "printWidth": 120,
-      "singleQuote": false,
-      "wrapAttributes": false,
-      "sortAttributes": false
-    }
+  "[scss]": {
+    "editor.defaultFormatter": "stylelint.vscode-stylelint"
   },
-  "vetur.format.defaultFormatter.html": "prettyhtml",
-  "vetur.validation.interpolation": false,
-  "vetur.completion.scaffoldSnippetSources": {
-    "workspace": "💼",
-    "user": "🗒️",
-    "vetur": "✌"
-  },
-  "prettier.singleQuote": true,
-  "editor.guides.indentation": true,
-  "editor.guides.bracketPairs": "active",
-  "cSpell.userWords": [
+  "cSpell.words": [
     "Alarge",
     "ATAC",
     "autofix",
@@ -112,6 +62,7 @@
     "Tureblood",
     "vuelidate",
     "vuex",
+    "wangeditor",
     "wangzhijie",
     "zoomin"
   ],
