@@ -14,19 +14,19 @@
 </template>
 
 <script>
-import modulesRoutes from '@/business-modules/case-show/util/getModulesRoutes';
+import modulesRoutes from '@/business-modules/case-show/util/getModulesRoutes'
 
 export default {
-  name: 'case-show',
+  name: 'CaseShow',
   data() {
     return {
       componentList: []
-    };
+    }
   },
   mounted() {
-    this.componentList = modulesRoutes;
+    this.componentList = modulesRoutes
   }
-};
+}
 </script>
 
 <style lang='less' scoped>

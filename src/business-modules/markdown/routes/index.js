@@ -7,6 +7,6 @@ const routes = [
     },
     component: () => import(/* webpackChunkName: "markdown" */ '@/business-modules/markdown/views/index.vue')
   }
-];
+]
 
-export default routes;
+export default routes

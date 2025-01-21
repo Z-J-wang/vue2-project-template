@@ -6,13 +6,13 @@
 </template>
 
 <script>
-import PasswordInput from '@/business-modules/case-show/modules/input-password-js/components/PasswordInput';
+import PasswordInput from '@/business-modules/case-show/modules/input-password-js/components/PasswordInput'
 export default {
   mounted() {
     new PasswordInput('.pwd', (e, status) => {
-      console.log(e);
-      console.log(status);
-    });
+      console.log(e)
+      console.log(status)
+    })
   }
-};
+}
 </script>

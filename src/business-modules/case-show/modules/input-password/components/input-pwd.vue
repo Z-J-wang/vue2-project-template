@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'password-input',
+  name: 'PasswordInput',
   props: {
     modelVal: String,
     placeholder: {
@@ -47,73 +47,73 @@ export default {
       hideValue: '',
       compositionStatue: false,
       compositionStartCursorIndex: 0
-    };
+    }
   },
   watch: {
     isShow: function() {
-      this.render(this.modelVal);
+      this.render(this.modelVal)
     },
     modelVal: function(val) {
-      this.render(val);
+      this.render(val)
     }
   },
   methods: {
     render(val) {
       if (this.isShow) {
-        this.hideValue = val;
+        this.hideValue = val
       } else {
-        this.hideValue = val.replace(/[^•]/g, '•');
+        this.hideValue = val.replace(/[^•]/g, '•')
       }
     },
 
     compositionstartHandle() {
       this.compositionStartCursorIndex = this.$refs[
         'password-input'
-      ].selectionStart; // 记录进行中文输入时光标的位置
-      this.compositionStatue = true;
+      ].selectionStart // 记录进行中文输入时光标的位置
+      this.compositionStatue = true
     },
 
     compositionendHandle() {
-      this.limitCN();
-      this.compositionStatue = false;
-      this.compositionLength = 0;
+      this.limitCN()
+      this.compositionStatue = false
+      this.compositionLength = 0
     },
 
     inputHandel() {
       if (this.compositionStatue) {
         // 进行中文输入时不执行 inputHandle 函数
-        return false;
+        return false
       }
-      this.formatPassword();
+      this.formatPassword()
     },
 
     pasteHandle() {
-      return false;
+      return false
     },
 
     formatPassword() {
-      let new_pwd = ''; // 存储新的真实密码
-      let old_pwd = this.modelVal || ''; // 获取旧的真实密码
-      const pwd_input_elem = this.$refs['password-input']; // 获取密码输入框DOM
-      let val = this.$refs['password-input'].value; // 获取输入框中的值
-      const cursorIndex = pwd_input_elem.selectionStart; // 获取光标在输入框中的位置
+      let new_pwd = '' // 存储新的真实密码
+      let old_pwd = this.modelVal || '' // 获取旧的真实密码
+      const pwd_input_elem = this.$refs['password-input'] // 获取密码输入框DOM
+      let val = this.$refs['password-input'].value // 获取输入框中的值
+      const cursorIndex = pwd_input_elem.selectionStart // 获取光标在输入框中的位置
       if (this.isShow) {
         // 明码显示,不做处理
-        new_pwd = val;
+        new_pwd = val
       } else {
         // 隐藏密码
         if (old_pwd && old_pwd.length > val.length) {
           // 旧的真实密码存在，且其字符串长度大于输入框的字符串长度，说明用户进行删除操作
-          const stop = old_pwd.length - val.length + cursorIndex; // 用户删除的字符串长度加光标的当前的位置，计算得出删除字符串的最后一个字符的位置
-          const del_string = old_pwd.substring(cursorIndex, stop); // 获取用户删除的字符串
-          new_pwd = old_pwd.replace(del_string, ''); // 将旧的真实密码中对应的删除字符串替换为'',实现对真实密码的删除操作
+          const stop = old_pwd.length - val.length + cursorIndex // 用户删除的字符串长度加光标的当前的位置，计算得出删除字符串的最后一个字符的位置
+          const del_string = old_pwd.substring(cursorIndex, stop) // 获取用户删除的字符串
+          new_pwd = old_pwd.replace(del_string, '') // 将旧的真实密码中对应的删除字符串替换为'',实现对真实密码的删除操作
         } else {
-          const reg = /[^•]/.exec(val); // 获取虚假密码中新增的密码字符
-          new_pwd = this.insertStr(old_pwd, reg.index, reg[0]); // 将用户新输入的字符插入旧的真实密码
-          this.cursorMove(pwd_input_elem, reg.index + 1); // 设置光标的位置
+          const reg = /[^•]/.exec(val) // 获取虚假密码中新增的密码字符
+          new_pwd = this.insertStr(old_pwd, reg.index, reg[0]) // 将用户新输入的字符插入旧的真实密码
+          this.cursorMove(pwd_input_elem, reg.index + 1) // 设置光标的位置
         }
       }
-      this.$emit('input', new_pwd);
+      this.$emit('input', new_pwd)
     },
 
     /**
@@ -123,7 +123,7 @@ export default {
      * @params newStr 要插入的字符串
      */
     insertStr(soure, start, newStr) {
-      return soure.slice(0, start) + newStr + soure.slice(start);
+      return soure.slice(0, start) + newStr + soure.slice(start)
     },
 
     /**
@@ -131,34 +131,34 @@ export default {
      */
     cursorMove(elem, spos) {
       // spos 光标的位置 -1为最后一位
-      if (spos < 0) spos = elem.value.length;
+      if (spos < 0) spos = elem.value.length
       if (elem.setSelectionRange) {
         //兼容火狐,谷歌
         setTimeout(function() {
-          elem.setSelectionRange(spos, spos);
-          elem.focus();
-        }, 0);
+          elem.setSelectionRange(spos, spos)
+          elem.focus()
+        }, 0)
       } else if (elem.createTextRange) {
         //兼容IE
-        var rng = elem.createTextRange();
-        rng.move('character', spos);
-        rng.select();
+        var rng = elem.createTextRange()
+        rng.move('character', spos)
+        rng.select()
       }
     },
 
     // 限制中文输入
     limitCN() {
-      let val = this.$refs['password-input'].value; // 获取输入框中的值
+      let val = this.$refs['password-input'].value // 获取输入框中的值
       // eslint-disable-next-line no-control-regex
-      val = val.replace(/[^\x00-\x80•]/gi, '');
-      this.$refs['password-input'].value = val;
+      val = val.replace(/[^\x00-\x80•]/gi, '')
+      this.$refs['password-input'].value = val
       this.cursorMove(
         this.$refs['password-input'],
         this.compositionStartCursorIndex
-      ); // 将光标重置为中文输入前的位置
+      ) // 将光标重置为中文输入前的位置
     }
   }
-};
+}
 </script>
 
 <style lang="less" scoped>

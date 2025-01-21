@@ -1,14 +1,14 @@
-import Vue from 'vue';
-import Vuex from 'vuex';
-import { automatedImportForObject } from '@/util/modules/automoted-import-modules';
+import Vue from 'vue'
+import Vuex from 'vuex'
+import { automatedImportForObject } from '@/util/modules/automoted-import-modules'
 
-Vue.use(Vuex);
+Vue.use(Vuex)
 
-const state = {};
-const mutations = {};
-const actions = {};
-const getter = {};
-const moudules = automatedImportForObject(require.context('@/store/modules', true, /.\/.+\.js/));
+const state = {}
+const mutations = {}
+const actions = {}
+const getter = {}
+const moudules = automatedImportForObject(require.context('@/store/modules', true, /.\/.+\.js/))
 
 export default new Vuex.Store({
   state,
@@ -16,4 +16,4 @@ export default new Vuex.Store({
   actions,
   getter,
   modules: moudules
-});
+})

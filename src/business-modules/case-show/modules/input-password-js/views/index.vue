@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import inputPwdVue from '../components/input-pwd.vue';
-import code from '../assets/code';
+import inputPwdVue from '../components/input-pwd.vue'
+import code from '../assets/code'
 export default {
   name: '',
   components: {
@@ -28,12 +28,12 @@ export default {
         Javascript: '',
         CSS: ''
       }
-    };
+    }
   },
   created() {
-    this.sourcecode.HTML = code.HTML;
-    this.sourcecode.Javascript = code.Javascript;
-    this.sourcecode.CSS = code.CSS;
+    this.sourcecode.HTML = code.HTML
+    this.sourcecode.Javascript = code.Javascript
+    this.sourcecode.CSS = code.CSS
   }
-};
+}
 </script>

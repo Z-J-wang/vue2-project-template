@@ -13,11 +13,11 @@
 </template>
 
 <script>
-import { mavonEditor } from 'mavon-editor';
-import 'mavon-editor/dist/css/index.css';
-import publicDrawer from '@/business-modules/markdown/components/pulic-drawer.vue';
+import { mavonEditor } from 'mavon-editor'
+import 'mavon-editor/dist/css/index.css'
+import publicDrawer from '@/business-modules/markdown/components/pulic-drawer.vue'
 export default {
-  name: 'md-editor',
+  name: 'MdEditor',
   components: { publicDrawer, mavonEditor },
   data() {
     return {
@@ -61,47 +61,47 @@ export default {
         subfield: true, // 单双栏模式
         preview: true // 预览
       }
-    };
+    }
   },
   mounted() {
     if (this.$route.query.id) {
-      this.getArticlesByID(this.$route.query.id);
+      this.getArticlesByID(this.$route.query.id)
     }
   },
   methods: {
     async save() {
       if (!this.artilce.title) {
-        this.$message.warning('请输入标题');
-        return false;
+        this.$message.warning('请输入标题')
+        return false
       }
 
       if (!this.artilce.content) {
-        this.$message.warning('文章内容不能为空');
-        return false;
+        this.$message.warning('文章内容不能为空')
+        return false
       }
 
-      this.drawerVisible = true;
+      this.drawerVisible = true
     },
 
     /**
      * 根据 ID 获取文章
      */
     async getArticlesByID(id) {
-      const { data: res } = await this.$HttpApi.getArticlesByID(id);
+      const { data: res } = await this.$HttpApi.getArticlesByID(id)
       if (res?.code === 1000) {
-        this.artilce = res.data;
+        this.artilce = res.data
       }
     },
 
     async $imgAdd(pos, $file) {
       // 将图片上传到服务器.
-      var formdata = new FormData();
-      formdata.append('file', $file);
-      const { data: res } = await this.$HttpApi.uploadImage(formdata);
-      this.$refs.md.$img2Url(pos, `${process.env.VUE_APP_IMAGE_URL}/${res.url}`);
+      var formdata = new FormData()
+      formdata.append('file', $file)
+      const { data: res } = await this.$HttpApi.uploadImage(formdata)
+      this.$refs.md.$img2Url(pos, `${process.env.VUE_APP_IMAGE_URL}/${res.url}`)
     }
   }
-};
+}
 </script>
 
 <style lang="less" scoped>

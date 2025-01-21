@@ -8,6 +8,6 @@ const routes = [
     },
     component: () => import(/* webpackChunkName: "case-show" */ '@/business-modules/case-show/modules/pagination/views/index.vue')
   }
-];
+]
 
-export default routes;
+export default routes

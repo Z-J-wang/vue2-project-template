@@ -21,8 +21,8 @@
 
 <script>
 export default {
-  name: 'home-header'
-};
+  name: 'HomeHeader'
+}
 </script>
 
 <style lang="less" scoped>

@@ -1,7 +1,7 @@
 const HTML = `<template>
 <div :id="editorName" class="editor"></div>
 </template>
-`;
+`
 
 const Javascript = `import E from 'wangeditor';
 
@@ -116,16 +116,16 @@ export default {
       return imgNum >= this.maxImageNum ? false : true;
     }
   }
-};`;
+};`
 
 const CSS = `<style lang="less" scoped>
 .editor{
   text-align: left;
 }
-</style>`;
+</style>`
 
 export default {
   HTML,
   Javascript,
   CSS
-};
+}

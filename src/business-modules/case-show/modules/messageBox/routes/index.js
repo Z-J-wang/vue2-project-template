@@ -11,6 +11,6 @@ const routes = [
         /* webpackChunkName: "messageBox" */ '@/business-modules/case-show/modules/messageBox/views/index.vue'
       )
   }
-];
+]
 
-export default routes;
+export default routes

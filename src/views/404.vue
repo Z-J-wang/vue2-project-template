@@ -33,15 +33,15 @@ export default {
   data() {
     return {
       url: require('../assets/img/404.png')
-    };
+    }
   },
 
   methods: {
     back() {
-      this.$router.back(-1);
+      this.$router.back(-1)
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 .noFound {

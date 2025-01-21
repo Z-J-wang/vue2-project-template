@@ -10,13 +10,13 @@
 
 <script>
 export default {
-  name: 'carousel',
+  name: 'Carousel',
   data() {
     return {
       imgs: [require('@/assets/img/home/banner/banner1.jpeg'), require('@/assets/img/home/banner/banner2.jpeg'), require('@/assets/img/home/banner/banner3.jpeg'), require('@/assets/img/home/banner/banner4.jpeg')]
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="less" scoped>

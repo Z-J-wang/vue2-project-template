@@ -1,9 +1,9 @@
 // 本文件的详细说明请查阅：https://blog.csdn.net/weixin_44869002/article/details/106826503
 
-const path = require('path');
-const webpack = require('webpack');
-const TerserPlugin = require('terser-webpack-plugin'); // js压缩插件
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const path = require('path')
+const webpack = require('webpack')
+const TerserPlugin = require('terser-webpack-plugin') // js压缩插件
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
   publicPath: '/', // 基本路径
@@ -15,8 +15,8 @@ module.exports = {
   chainWebpack: config => {
     // 启用打包分析工具 BundleAnalyzer
     config.when(process.env.NODE_ENV_BUNDLE_ANALYZE === 'true', config => {
-      config.plugin('BundleAnalyzerPlugin').use(BundleAnalyzerPlugin);
-    });
+      config.plugin('BundleAnalyzerPlugin').use(BundleAnalyzerPlugin)
+    })
 
     // 开启图片压缩
     config.module
@@ -25,10 +25,10 @@ module.exports = {
       .use('url-loader')
       .loader('url-loader')
       .tap(options => {
-        options.limit = 10240; // 小于10kb的图片都转为base64
-        return options;
+        options.limit = 10240 // 小于10kb的图片都转为base64
+        return options
       })
-      .end();
+      .end()
 
     /**
      * 将svg图片转为组件使用
@@ -45,13 +45,13 @@ module.exports = {
         'window.jQuery': 'jquery',
         Popper: ['popper.js', 'default']
       }
-    ]);
+    ])
   },
 
   configureWebpack: config => {
     if (process.env.NODE_ENV === 'production') {
       // 为生产环境修改配置...
-      config.mode = 'production';
+      config.mode = 'production'
       // 将每个依赖包打包成单独的js文件
       const optimization = {
         runtimeChunk: 'single',
@@ -67,12 +67,12 @@ module.exports = {
               priority: -10,
               chunks: 'all',
               name(module) {
-                const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
-                return `npm.${packageName.replace('@', '')}`;
+                const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1]
+                return `npm.${packageName.replace('@', '')}`
               }
             },
             common: {
-              name: `chunk-common`,
+              name: 'chunk-common',
               minChunks: 2,
               priority: -20,
               chunks: 'all',
@@ -80,7 +80,7 @@ module.exports = {
             },
             element: {
               chunks: 'all',
-              name: `element-ui`,
+              name: 'element-ui',
               test: /[\\/]element-ui[\\/]/,
               minChunks: 2,
               priority: 0
@@ -114,13 +114,13 @@ module.exports = {
             }
           })
         ]
-      };
+      }
       Object.assign(config, {
         optimization
-      });
+      })
     } else {
       // 为开发环境修改配置...
-      config.mode = 'development';
+      config.mode = 'development'
     }
     Object.assign(config, {
       // 开发生产共同配置
@@ -132,7 +132,7 @@ module.exports = {
           '@c': path.resolve(__dirname, './src/components')
         }
       }
-    });
+    })
   },
 
   // css相关配置
@@ -176,4 +176,4 @@ module.exports = {
   pluginOptions: {},
 
   lintOnSave: false
-};
+}

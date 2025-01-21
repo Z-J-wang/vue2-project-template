@@ -31,7 +31,7 @@
 
 <script>
 export default {
-  name: 'template-code',
+  name: 'TemplateCode',
   props: {
     HTML: String,
     Javascript: String,
@@ -40,12 +40,12 @@ export default {
   data() {
     return {
       collapseName: 'HTML'
-    };
+    }
   },
   created() {
-    this.sourcecode = '';
+    this.sourcecode = ''
   }
-};
+}
 </script>
 
 <style lang='less' scoped>

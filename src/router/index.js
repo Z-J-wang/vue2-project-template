@@ -1,17 +1,17 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import { automatedImportOfRoutes } from '@/util/modules/routerHandle';
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import { automatedImportOfRoutes } from '@/util/modules/routerHandle'
 
 // 自动加载 modules 的路由文件
-const modulesRoutes = automatedImportOfRoutes(require.context('@/business-modules/', true, /\/routes\/index.js/));
+const modulesRoutes = automatedImportOfRoutes(require.context('@/business-modules/', true, /\/routes\/index.js/))
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
 // 解决多次点击同一路由报错问题
-const originalPush = VueRouter.prototype.push;
+const originalPush = VueRouter.prototype.push
 VueRouter.prototype.push = function push(location) {
-  return originalPush.call(this, location).catch(err => err);
-};
+  return originalPush.call(this, location).catch(err => err)
+}
 
 const routes = [
   {
@@ -45,7 +45,7 @@ const routes = [
     }
   },
   ...modulesRoutes
-];
+]
 
 /**
  * 路由切换滚动条行为
@@ -58,21 +58,21 @@ const routes = [
 const scrollBehavior = function(to, from, savedPosition) {
   if (savedPosition) {
     // savedPosition 当且仅当 popstate 导航 (通过浏览器的 前进/后退 按钮触发) 时才可用。
-    return savedPosition;
+    return savedPosition
   } else {
-    return { x: 0, y: 0 };
+    return { x: 0, y: 0 }
   }
-};
+}
 
 const router = new VueRouter({
   mode: 'history',
   routes,
   scrollBehavior
-});
+})
 
 router.beforeEach((to, from, next) => {
   // 路由守卫
-  next();
-});
+  next()
+})
 
-export default router;
+export default router

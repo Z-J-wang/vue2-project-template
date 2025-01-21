@@ -1,8 +1,8 @@
 /**
  * @module mockjs 入口文件
  */
-import util from '@/util/index';
-import Mock from 'mockjs';
+import util from '@/util/index'
+import Mock from 'mockjs'
 
 /**
  * 根据运行环境来决定是否导入 mock 的 module
@@ -14,7 +14,7 @@ if (process.env.NODE_ENV === 'mock') {
   // 设置拦截ajax请求的相应时间
   Mock.setup({
     timeout: '200-600'
-  });
+  })
 
-  util.automatedImportForObject(require.context('@/mock/modules', true, /.+\.js/));
+  util.automatedImportForObject(require.context('@/mock/modules', true, /.+\.js/))
 }

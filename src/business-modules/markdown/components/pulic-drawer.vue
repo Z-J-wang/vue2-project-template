@@ -59,7 +59,7 @@
 
 <script>
 export default {
-  name: 'public-drawer',
+  name: 'PublicDrawer',
   props: {
     visible: {
       type: Boolean,
@@ -88,47 +88,47 @@ export default {
       newTag: '', // 新增标签
       tagControlVisible: false, // 标签设置模块显示隐藏
       allTags: [] // 已存在的标签
-    };
+    }
   },
   watch: {
     visible() {
-      this.drawer = this.visible;
-      this.pulicData.tags = this.artilce.tags.split('-');
-      this.pulicData.category = this.artilce.category;
-      this.pulicData.introduction = this.artilce.introduction;
+      this.drawer = this.visible
+      this.pulicData.tags = this.artilce.tags.split('-')
+      this.pulicData.category = this.artilce.category
+      this.pulicData.introduction = this.artilce.introduction
     }
   },
   created() {
-    this.getTags();
-    this.getCategories();
+    this.getTags()
+    this.getCategories()
   },
   methods: {
     // 关闭事件
     handleClose() {
-      this.$emit('close');
+      this.$emit('close')
     },
 
     // 删除标签
     delTag(index) {
-      this.pulicData.tags.splice(index, 1);
+      this.pulicData.tags.splice(index, 1)
     },
 
     // 新增标签
     addTag() {
       if (4 - this.pulicData.tags.length) {
-        this.pulicData.tags.push(this.newTag);
-        this.newTag = '';
+        this.pulicData.tags.push(this.newTag)
+        this.newTag = ''
       } else {
-        this.$message.warning('最多可以添加 4 个标签');
+        this.$message.warning('最多可以添加 4 个标签')
       }
     },
 
     // 选定标签
     selecTag(tag) {
       if (4 - this.pulicData.tags.length) {
-        this.pulicData.tags.push(tag);
+        this.pulicData.tags.push(tag)
       } else {
-        this.$message.warning('最多可以添加 4 个标签');
+        this.$message.warning('最多可以添加 4 个标签')
       }
     },
 
@@ -143,33 +143,33 @@ export default {
             tags: this.pulicData.tags,
             category: this.pulicData.category,
             introduction: this.pulicData.introduction
-          };
-          let res;
+          }
+          let res
           if (this.$route.query.type === 'edit') {
-            res = await this.$HttpApi.updateArticle(params);
+            res = await this.$HttpApi.updateArticle(params)
           } else {
-            res = await this.$HttpApi.createArticle(params);
+            res = await this.$HttpApi.createArticle(params)
           }
           if (res?.data?.code === 1000) {
             this.$router.push({
               path: `/blog-detail/${res?.data?.data.id}`
-            });
-            this.$message.success('保存成功');
-            this.handleClose();
+            })
+            this.$message.success('保存成功')
+            this.handleClose()
           } else {
-            this.$message.error(res?.data?.msg);
+            this.$message.error(res?.data?.msg)
           }
         }
-      });
+      })
     },
 
     /**
      * 获取已存在的标签
      */
     async getTags() {
-      const { data: res } = await this.$HttpApi.getTags();
+      const { data: res } = await this.$HttpApi.getTags()
       if (res?.code === 1000) {
-        this.allTags = res.data;
+        this.allTags = res.data
       }
     },
 
@@ -177,13 +177,13 @@ export default {
      * 获取已存在的文章分类
      */
     async getCategories() {
-      const { data: res } = await this.$HttpApi.getCategories();
+      const { data: res } = await this.$HttpApi.getCategories()
       if (res?.code === 1000) {
-        this.categories = res.data;
+        this.categories = res.data
       }
     }
   }
-};
+}
 </script>
 
 <style lang="less" scoped>

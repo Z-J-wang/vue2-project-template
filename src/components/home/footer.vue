@@ -9,8 +9,8 @@
 
 <script>
 export default {
-  name: 'footer-bar'
-};
+  name: 'FooterBar'
+}
 </script>
 
 <style lang="less" scoped>

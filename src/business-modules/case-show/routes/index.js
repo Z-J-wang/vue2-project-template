@@ -1,4 +1,4 @@
-import modulesRoutes from '@/business-modules/case-show/util/getModulesRoutes';
+import modulesRoutes from '@/business-modules/case-show/util/getModulesRoutes'
 
 let routes = [
   {
@@ -10,6 +10,6 @@ let routes = [
     component: () => import(/* webpackChunkName: "case-show" */ '@/business-modules/case-show/views/index.vue')
   },
   ...modulesRoutes
-];
+]
 
-export default routes;
+export default routes

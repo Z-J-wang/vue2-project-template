@@ -11,6 +11,6 @@ const routes = [
         /* webpackChunkName: "case-show" */ '@/business-modules/case-show/modules/input-password/views/index.vue'
       )
   }
-];
+]
 
-export default routes;
+export default routes

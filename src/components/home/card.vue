@@ -18,14 +18,14 @@
 
 <script>
 export default {
-  name: 'card',
+  name: 'Card',
   props: {
     artileData: {
       type: Object,
       require: true
     }
   }
-};
+}
 </script>
 
 <style lang="less" scoped>

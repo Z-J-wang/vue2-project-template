@@ -1,9 +1,9 @@
-import AxiosConfig from '@/axios/config';
+import AxiosConfig from '@/axios/config'
 
 class Api extends AxiosConfig {
   constructor() {
-    super();
-    this.axios = super.getInstance();
+    super()
+    this.axios = super.getInstance()
   }
 
   /**
@@ -21,4 +21,4 @@ class Api extends AxiosConfig {
   updateArticle = params => this.axios.post('/api/article/updateArticle', params);
 }
 
-export default Api;
+export default Api

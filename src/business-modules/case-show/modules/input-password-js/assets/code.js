@@ -21,7 +21,7 @@ const HTML = `<!DOCTYPE html>
       };
     </script>
   </body>
-</html>`;
+</html>`
 
 const Javascript = `// 密码输入框组件
 class PasswordInput {
@@ -196,12 +196,12 @@ class PasswordInput {
     this._inputElem.value = val;
     this.cursorMove(this._inputElem, this.compositionStartCursorIndex); // 将光标重置为中文输入前的位置
   }
-}`;
+}`
 
-const CSS = '';
+const CSS = ''
 
 export default {
   HTML,
   Javascript,
   CSS
-};
+}

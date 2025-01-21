@@ -11,11 +11,11 @@
 </template>
 
 <script>
-import '@/mock/index';
-import carousel from '@c/home/carousel.vue';
-import card from '@/components/home/card.vue';
+import '@/mock/index'
+import carousel from '@c/home/carousel.vue'
+import card from '@/components/home/card.vue'
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
     carousel,
     card
@@ -23,11 +23,11 @@ export default {
   data() {
     return {
       dataList: []
-    };
+    }
   },
   async created() {
-    const res = await this.$HttpApi.example();
-    console.log(res);
+    const res = await this.$HttpApi.example()
+    console.log(res)
   },
   methods: {
     /**
@@ -40,12 +40,12 @@ export default {
         sort: 'desc',
         pageSize: 10,
         page: 1
-      };
-      const data = await this.$HttpApi.getArticlesByPage(params);
-      console.log(data);
+      }
+      const data = await this.$HttpApi.getArticlesByPage(params)
+      console.log(data)
     }
   }
-};
+}
 </script>
 <style lang="less" scoped>
 main {

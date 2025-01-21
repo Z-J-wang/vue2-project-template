@@ -1,7 +1,7 @@
-import Vue from 'vue';
-import messageBoxVue from '@/business-modules/case-show/modules/messageBox/components/messageBox.vue';
+import Vue from 'vue'
+import messageBoxVue from '@/business-modules/case-show/modules/messageBox/components/messageBox.vue'
 
-const MessageBox = Vue.extend(messageBoxVue); // 直接将Vue组件作为Vue.extend的参数
+const MessageBox = Vue.extend(messageBoxVue) // 直接将Vue组件作为Vue.extend的参数
 
 const messageBox = (message, title, config = {}) => {
   return new Promise((resolve, reject) => {
@@ -17,24 +17,24 @@ const messageBox = (message, title, config = {}) => {
         cancelButtonText: config?.cancelButtonText || '取消', // 未配置文本，默认‘取消’
         type: config?.type || 'success'
       }
-    });
-    instance.vm = instance.$mount(); // 挂载但是并未插入dom，是一个完整的Vue实例
-    instance.dom = instance.vm.$el;
-    document.body.appendChild(instance.dom); // 将dom插入body
+    })
+    instance.vm = instance.$mount() // 挂载但是并未插入dom，是一个完整的Vue实例
+    instance.dom = instance.vm.$el
+    document.body.appendChild(instance.dom) // 将dom插入body
 
     instance.callback = ret => {
       if (ret === true) {
-        resolve();
+        resolve()
       } else if (ret === false) {
-        reject();
+        reject()
       }
-    };
-  });
-};
+    }
+  })
+}
 
 export default {
   install: Vue => {
-    Vue.prototype.$messageBox = messageBox; // 将组件暴露出去，并挂载在Vue的prototype上
+    Vue.prototype.$messageBox = messageBox // 将组件暴露出去，并挂载在Vue的prototype上
   }
-};
+}
 

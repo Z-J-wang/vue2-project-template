@@ -58,7 +58,7 @@
 </template>
 <script>
 export default {
-  name: 'message-box',
+  name: 'MessageBox',
   data() {
     return {
       visible: false,
@@ -73,44 +73,44 @@ export default {
       cancelButtonText: '取消',
       type: 'success', // success、warning、error、info、question
       callback: null
-    };
+    }
   },
   created() {
     if (this.lockScroll) {
       // 是否在 MessageBox 出现时将 body 滚动锁定
-      document.body.classList.add('messageBox-srcoll-hideen');
+      document.body.classList.add('messageBox-srcoll-hideen')
     }
     this.$nextTick(() => {
-      this.visible = true;
-    });
+      this.visible = true
+    })
   },
   methods: {
     close() {
-      this.visible = false;
-      this.callback && this.callback(false);
-      this.remove();
+      this.visible = false
+      this.callback && this.callback(false)
+      this.remove()
     },
     cloceModal() {
       if (this.closeOnClickModal) {
-        this.close();
+        this.close()
       }
     },
     confirm() {
-      this.visible = false;
-      this.callback && this.callback(true);
-      this.remove();
+      this.visible = false
+      this.callback && this.callback(true)
+      this.remove()
     },
 
     // 组件移除事件
     remove() {
       setTimeout(() => {
-        this.$destroy(this);
-        document.body.classList.remove('messageBox-srcoll-hideen');
-        document.querySelector('#messageBox').remove(); // 等过渡效果结束后，再移除组件
-      }, 500);
+        this.$destroy(this)
+        document.body.classList.remove('messageBox-srcoll-hideen')
+        document.querySelector('#messageBox').remove() // 等过渡效果结束后，再移除组件
+      }, 500)
     }
   }
-};
+}
 </script>
 <style lang="less">
 .messageBox-srcoll-hideen {

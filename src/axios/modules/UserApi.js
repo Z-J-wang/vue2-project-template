@@ -4,12 +4,12 @@ import AxiosConfig from '../config/baseConfig'
 
 class UserApi extends AxiosConfig {
   // eslint-disable-next-line space-before-function-paren
-  constructor () {
+  constructor() {
     super()
-    this.axios = super.getIntance()
+    this.axios = super.getInstance()
   }
 
-  getData () {
+  getData() {
     return this.axios.get('/api/getData')
   }
 }

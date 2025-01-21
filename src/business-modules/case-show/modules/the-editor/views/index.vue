@@ -12,10 +12,10 @@
 </template>
 
 <script>
-import theEditor from '../components/the-editor.vue';
-import code from '../assets/code';
+import theEditor from '../components/the-editor.vue'
+import code from '../assets/code'
 export default {
-  name: 'editor',
+  name: 'Editor',
   components: {
     theEditor
   },
@@ -27,12 +27,12 @@ export default {
         Javascript: '',
         CSS: ''
       }
-    };
+    }
   },
   created() {
-    this.sourcecode.HTML = code.HTML;
-    this.sourcecode.Javascript = code.Javascript;
-    this.sourcecode.CSS = code.CSS;
+    this.sourcecode.HTML = code.HTML
+    this.sourcecode.Javascript = code.Javascript
+    this.sourcecode.CSS = code.CSS
   }
-};
+}
 </script>

@@ -40,7 +40,7 @@ class AxiosConfig {
   }
 
   // 暴露私有变量 _instance
-  getIntance () {
+  getInstance() {
     return this._instance
   }
 }

@@ -21,7 +21,7 @@ const HTML = `<template>
     </div>
   </div>
 </template>
-`;
+`
 
 const Javascript = `<script>
 export default {
@@ -91,7 +91,7 @@ export default {
     }
   }
 };
-</script>`;
+</script>`
 
 const CSS = `<style lang="less" scoped>
 .common-pagination-front {
@@ -181,10 +181,10 @@ const CSS = `<style lang="less" scoped>
     }
   }
 }
-</style>`;
+</style>`
 
 export default {
   HTML,
   Javascript,
   CSS
-};
+}

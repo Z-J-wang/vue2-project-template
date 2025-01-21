@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import pagination from '@/business-modules/case-show/modules/pagination/components/common-pagination-front.vue';
-import code from '../assets/code';
+import pagination from '@/business-modules/case-show/modules/pagination/components/common-pagination-front.vue'
+import code from '../assets/code'
 export default {
   name: '',
   components: {
@@ -22,17 +22,17 @@ export default {
         Javascript: '',
         CSS: ''
       }
-    };
+    }
   },
   created() {
-    this.sourcecode.HTML = code.HTML;
-    this.sourcecode.Javascript = code.Javascript;
-    this.sourcecode.CSS = code.CSS;
+    this.sourcecode.HTML = code.HTML
+    this.sourcecode.Javascript = code.Javascript
+    this.sourcecode.CSS = code.CSS
   },
   methods: {
     handleCurrentChange(val) {
-      console.log(val);
+      console.log(val)
     }
   }
-};
+}
 </script>

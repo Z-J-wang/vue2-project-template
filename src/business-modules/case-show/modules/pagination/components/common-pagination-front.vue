@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'common-pagination-front',
+  name: 'CommonPaginationFront',
   props: {
     total: {
       // 总条数
@@ -51,20 +51,20 @@ export default {
   data() {
     return {
       jumpToPage: ''
-    };
+    }
   },
   computed: {
     /**
      * 总页数
      */
     totalPages() {
-      let all = this.total / this.pageSize;
+      let all = this.total / this.pageSize
       if (this.total % this.pageSize > 0) {
         // 如果不能整除，则向下取整并+1
-        all = Math.floor(all) + 1;
+        all = Math.floor(all) + 1
       }
 
-      return all;
+      return all
     }
   },
   methods: {
@@ -72,7 +72,7 @@ export default {
      * 当前分页切换事件
      */
     handleCurrentChange(val) {
-      this.$emit('currentChange', val);
+      this.$emit('currentChange', val)
     },
 
     /**
@@ -80,16 +80,16 @@ export default {
      */
     jump() {
       if (this.jumpToPage < 1) {
-        this.currentPage = 1;
+        this.currentPage = 1
       } else if (this.jumpToPage > this.totalPages) {
-        this.currentPage = this.totalPages;
+        this.currentPage = this.totalPages
       } else {
-        this.currentPage = this.jumpToPage;
+        this.currentPage = this.jumpToPage
       }
-      this.$emit('currentChange', this.currentPage);
+      this.$emit('currentChange', this.currentPage)
     }
   }
-};
+}
 </script>
 
 <style lang="less" scoped>
