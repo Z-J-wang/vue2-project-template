@@ -1,5 +1,5 @@
 {
-  "name": "vuecli-template",
+  "name": "project-template-vue2",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -36,7 +36,6 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "eslint-plugin-vue": "^6.2.2",
-    "image-webpack-loader": "^7.0.1",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
     "terser-webpack-plugin": "^4.2.3",
