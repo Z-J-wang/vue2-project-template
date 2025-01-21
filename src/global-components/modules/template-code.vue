@@ -40,12 +40,12 @@ export default {
   data() {
     return {
       collapseName: 'HTML'
-    }
+    };
   },
   created() {
-    this.sourcecode = ''
+    this.sourcecode = '';
   }
-}
+};
 </script>
 
 <style lang='less' scoped>

@@ -25,7 +25,7 @@ export default {
       require: true
     }
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import code from '../assets/code'
+import code from '../assets/code';
 export default {
   name: 'Editor',
   data() {
@@ -27,12 +27,12 @@ export default {
         Javascript: '',
         CSS: ''
       }
-    }
+    };
   },
   created() {
-    this.sourcecode.HTML = code.HTML
-    this.sourcecode.Javascript = code.Javascript
-    this.sourcecode.CSS = code.CSS
+    this.sourcecode.HTML = code.HTML;
+    this.sourcecode.Javascript = code.Javascript;
+    this.sourcecode.CSS = code.CSS;
   },
   methods: {
     open(type) {
@@ -42,12 +42,12 @@ export default {
         type: type
       })
         .then(() => {
-          this.$message.success('您点击了：确认')
+          this.$message.success('您点击了：确认');
         })
         .catch(() => {
-          this.$message.success('您点击了：取消')
-        })
+          this.$message.success('您点击了：取消');
+        });
     }
   }
-}
+};
 </script>

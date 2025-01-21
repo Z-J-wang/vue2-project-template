@@ -10,7 +10,7 @@
 <script>
 export default {
   name: 'FooterBar'
-}
+};
 </script>
 
 <style lang="less" scoped>

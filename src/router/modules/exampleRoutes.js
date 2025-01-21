@@ -1,5 +1,5 @@
 // 举例路由
-import Example from '@v/Example.vue'
+import Example from '@v/Example.vue';
 
 const exampleRoutes = [
     {
@@ -7,6 +7,6 @@ const exampleRoutes = [
         name: 'example',
         component: Example
     }
-]
+];
 
-export default exampleRoutes
+export default exampleRoutes;

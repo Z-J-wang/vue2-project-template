@@ -38,7 +38,7 @@ module.exports = {
     'space-before-function-paren': [0, 'always'],
     'no-useless-escape': 0,
     quotes: [1, 'single'],
-    semi: [2, 'never']
+    semi: [2, 'always']
   },
 
   extends: ['plugin:vue/essential', 'eslint:recommended'],
@@ -51,4 +51,4 @@ module.exports = {
       }
     }
   ]
-}
+};

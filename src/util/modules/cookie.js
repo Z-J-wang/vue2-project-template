@@ -1,9 +1,9 @@
-import vueCookies from 'vue-cookies'
+import vueCookies from 'vue-cookies';
 
 export default class Cookies {
   constructor () {
     // 设置全局 Cookie 过期时间
-    vueCookies.config('30d')
+    vueCookies.config('30d');
   }
 
   /**
@@ -11,7 +11,7 @@ export default class Cookies {
    * @param {*} key
    */
   getCookie (key) {
-    return vueCookies.get(key)
+    return vueCookies.get(key);
   }
 
   /**
@@ -20,7 +20,7 @@ export default class Cookies {
    * @param {*} value
    */
   setCookie (key, value) {
-    return vueCookies.set(key, value, '1d')
+    return vueCookies.set(key, value, '1d');
   }
 
   /**
@@ -28,14 +28,14 @@ export default class Cookies {
    * @param {*} key
    */
   removeCookie (key) {
-    return vueCookies.remove(key)
+    return vueCookies.remove(key);
   }
 
   /**
    * 获取 token
    */
   getToken () {
-    return vueCookies.get('token')
+    return vueCookies.get('token');
   }
 
   /**
@@ -43,21 +43,21 @@ export default class Cookies {
    * @param token
    */
   setToken (token) {
-    return vueCookies.set('token', token, '1d')
+    return vueCookies.set('token', token, '1d');
   }
 
   /**
    * 删除 token
    */
   removeToken () {
-    return vueCookies.remove('token')
+    return vueCookies.remove('token');
   }
 
   /**
    * 检查 token
    */
   hasToken () {
-    return vueCookies.isKey('token')
+    return vueCookies.isKey('token');
   }
 
   /**
@@ -65,7 +65,7 @@ export default class Cookies {
    * @param {*} key
    */
   getUserInfo () {
-    return vueCookies.get('userInfo')
+    return vueCookies.get('userInfo');
   }
 
   /**
@@ -74,7 +74,7 @@ export default class Cookies {
    * @param {*} value
    */
   setUserInfo (userinfo) {
-    return vueCookies.set('userInfo', userinfo, '1d')
+    return vueCookies.set('userInfo', userinfo, '1d');
   }
 
   /**
@@ -82,6 +82,6 @@ export default class Cookies {
    * @param {*} key
    */
   removeUserInfo () {
-    return vueCookies.remove('userInfo')
+    return vueCookies.remove('userInfo');
   }
 }

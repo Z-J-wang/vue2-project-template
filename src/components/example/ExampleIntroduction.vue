@@ -10,9 +10,9 @@ export default {
     data () {
         return {
             text: '举例组件，正式使用时请删除。'
-        }
+        };
     }
-}
+};
 </script>
 
 <style>
