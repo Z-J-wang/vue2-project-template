@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  name: 'card',
+  name: 'Card',
   props: {
     artileData: {
       type: Object,

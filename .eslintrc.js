@@ -29,7 +29,7 @@ module.exports = {
         }
       }
     ],
-    'vue/name-property-casing': ['error', 'kebab-case'],
+    'vue/name-property-casing': ['error', 'PascalCase'],
     'no-console': 'off',
     'no-debugger': 'off',
     'no-spaced-func': 2,
@@ -37,7 +37,6 @@ module.exports = {
     'no-alert': 0,
     'space-before-function-paren': [0, 'always'],
     'no-useless-escape': 0,
-    indent: ['error', 2, { SwitchCase: 1 }],
     quotes: [1, 'single'],
     semi: [2, 'always']
   },

@@ -6,7 +6,7 @@
 import E from 'wangeditor';
 
 export default {
-  name: 'the-editor',
+  name: 'TheEditor',
   props: {
     editorName: {
       type: String,

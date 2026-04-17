@@ -24,7 +24,7 @@
 
 <script>
 export default {
-  name: 'common-pagination-front',
+  name: 'CommonPaginationFront',
   props: {
     total: {
       // 总条数

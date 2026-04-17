@@ -1,12 +1,12 @@
 <template>
-    <div>
-        <example-introduction />
-    </div>
+  <div>
+    <example-introduction />
+  </div>
 </template>
 
 <script>
 // @ is an alias to /src
-import ExampleIntroduction from '@c/example/ExampleIntroduction.vue'
+import ExampleIntroduction from '@c/example/ExampleIntroduction.vue';
 
 export default {
     name: 'Home',
@@ -14,7 +14,7 @@ export default {
         ExampleIntroduction
     },
     created () {
-        console.log(this.$HttpApi)
+        console.log(this.$HttpApi);
     }
-}
+};
 </script>

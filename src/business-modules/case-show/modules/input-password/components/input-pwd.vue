@@ -25,7 +25,7 @@
 
 <script>
 export default {
-  name: 'password-input',
+  name: 'PasswordInput',
   props: {
     modelVal: String,
     placeholder: {

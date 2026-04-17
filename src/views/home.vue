@@ -15,7 +15,7 @@ import '@/mock/index';
 import carousel from '@c/home/carousel.vue';
 import card from '@/components/home/card.vue';
 export default {
-  name: 'home',
+  name: 'Home',
   components: {
     carousel,
     card
